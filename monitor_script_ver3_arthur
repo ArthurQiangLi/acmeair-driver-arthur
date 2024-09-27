@@ -18,12 +18,20 @@ sdclient = SdMonitorClient(sdc_url=URL, custom_headers=ibm_headers)
 
 # Define metrics to monitor
 metrics = [
-    {"id": "memory.limit.used.percent", "aggregations": {"time": "avg", "group": "avg"}},
-    {"id": "net.request.time", "aggregations": {"time": "max", "group": "avg"}},
+    # {"id": "net.http.error.count", "aggregations": {"time": "avg", "group": "avg"}},
+    # {"id": "memory.limit.used.percent", "aggregations": {"time": "avg", "group": "avg"}},
+    # {"id": "net.http.ttfb.avg", "aggregations": {"time": "avg", "group": "avg"}}, 
+    # {"id": "net.http.requests.count", "aggregations": {"time": "rate", "group": "avg"}}, 
     {"id": "cpu.quota.used.percent", "aggregations": {"time": "avg", "group": "avg"}},
-    {"id": "net.http.error.count", "aggregations": {"time": "avg", "group": "avg"}},
-    {"id": "cpu.used.percent", "aggregations": {"time": "avg", "group": "avg"}}
+    {"id": "cpu.used.percent", "aggregations": {"time": "avg", "group": "avg"}},
+    {"id": "net.request.time", "aggregations": {"time": "max", "group": "avg"}},
+    {"id": "net.http.request.time", "aggregations": {"time": "avg", "group": "avg"}}, 
+    {"id": "net.http.request.time.worst", "aggregations": {"time": "avg", "group": "max"}}, 
 ]
+
+# METRICS = [ 
+#            {"id": "http.error.count", "aggregations": {"time": "sum", "group": "sum"}}, 
+#            {"id": "container.memory.usage.percent", "aggregations": {"time": "avg", "group": "avg"}} ]
 
 # Namespace filter
 filter = "kubernetes.namespace.name = 'group-7'"
@@ -80,7 +88,7 @@ def plot_all_data_in_one_windows():
 def plot_all_data_in_sub_window():
     # Generate the subplots
     num_metrics = len(metrics)
-    rows, cols = 3, 2  # Set up a 3x2 grid for subplots
+    rows, cols = 4, 2  # Set up a 3x2 grid for subplots
     fig, axs = plt.subplots(rows, cols, figsize=(15, 10))  # Create a figure with subplots
     fig.suptitle("Metrics Over Time", fontsize=16)
 
@@ -137,7 +145,7 @@ while time.time() < collection_end_time:
                 value = d['d'][i]
 
                 # Convert units if necessary
-                if metric['id'] == 'net.request.time':
+                if metric['id'] == 'net.http.request.time' or metric['id'] == 'net.http.request.time.worst':
                     value = float(value) / 1e6  # Convert ns to ms   # Assuming the value is in nanoseconds, convert to milliseconds
                 else:
                     value = float(value)
@@ -169,7 +177,7 @@ print("##3## Dataset saved to 'metrics_dataset.csv'.")
 
 # Plotting each metric
 print("##4## Generating plots...")
-plot_all_data_in_one_windows()
+# plot_all_data_in_one_windows()
 plot_all_data_in_sub_window()
 
 print("#### All done.")

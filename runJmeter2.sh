@@ -11,9 +11,9 @@ fi
 HOST=$(oc get route acmeair-main-route -n group-${GROUP} --template='{{ .spec.host }}')
 PORT=80
 DURATION_BASE=$((60*5)) 
-THREAD_BASE=10
+THREAD_BASE=50
 USER_BASE=500
-RAMP_BASE=30
+RAMP_BASE=20
 DELAY_BASE=30
 # Accept workload level as an argument
 WORKLOAD=${1:-medium}
@@ -35,8 +35,8 @@ case "$WORKLOAD" in
         DELAY=$DELAY_BASE
         ;;
     high)
-        THREAD=$((THREAD_BASE*5))
-        USER=$((USER_BASE*5))
+        THREAD=$((THREAD_BASE*20)) 
+        USER=$((USER_BASE*20)) 
         DURATION=$DURATION_BASE
         RAMP=$RAMP_BASE
         DELAY=$DELAY_BASE
@@ -55,6 +55,7 @@ echo "USER=${USER}"
 echo "DURATION=${DURATION}"
 echo "RAMP=${RAMP}"
 echo "DELAY=${DELAY}"
+# exit 1
 
 # Check if host is reachable
 # if ! curl --output /dev/null --silent --head --fail "http://${HOST}"; then
@@ -65,7 +66,7 @@ echo "DELAY=${DELAY}"
 # Load initial data for the services
 curl http://${HOST}/booking/loader/load || { echo "Error loading booking data"; exit 1; }
 curl http://${HOST}/flight/loader/load || { echo "Error loading flight data"; exit 1; }
-curl http://${HOST}/customer/loader/load?numCustomers=10001 || { echo "Error loading customer data"; exit 1; }
+curl http://${HOST}/customer/loader/load?numCustomers=10003 || { echo "Error loading customer data"; exit 1; }
 
 # Run JMeter with the specified parameters
 jmeter -n -t acmeair-jmeter/scripts/AcmeAir-microservices-mpJwt.jmx \
