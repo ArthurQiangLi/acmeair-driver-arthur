@@ -18,3 +18,19 @@ DELAY=5
 Cleared bookings in 0.008 secondsLoaded flights for 5 days in 16.745 secondsLoaded 10001 customers in 0.386 seconds./runJmeter2.sh: line 76: 1: command not found
 JMeter test completed. Check jmeter_output.log for details.
 ```
+
+
+# login info
+API Key              mMdgK_7zUpsjHuRmBuQaut8GqecNMqw76XpWMRoQDSxK
+
+# Log in with this token
+```
+API Key              mMdgK_7zUpsjHuRmBuQaut8GqecNMqw76XpWMRoQDSxK
+
+# Log in with this token
+```
+oc login --token=sha256~kqKXQZ2nUKsxn9kt_s1qtfCUmKdnQ_Z_0MWrvkInZnI --server=https://c104-e.ca-tor.containers.cloud.ibm.com:30227
+oc login --token=sha256~9PGcSrOCGeJq_24iHf7OVFam_cAK6A8bNXgBv7bYts8 --server=https://c104-e.ca-tor.containers.cloud.ibm.com:30227
+
+
+```

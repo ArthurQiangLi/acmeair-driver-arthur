@@ -1,0 +1,134 @@
+#!/usr/bin/env python
+
+import sys
+import time
+from datetime import datetime, timedelta
+import pandas as pd
+import matplotlib.pyplot as plt
+from sdcclient import SdMonitorClient, IbmAuthHelper
+
+# Configuration values
+GUID = '3fed93bc-00f4-4651-8ce2-e73ba4b9a918'
+APIKEY = 'mMdgK_7zUpsjHuRmBuQaut8GqecNMqw76XpWMRoQDSxK'
+URL = 'https://ca-tor.monitoring.cloud.ibm.com'
+
+# Setup the Sysdig monitoring client
+ibm_headers = IbmAuthHelper.get_headers(URL, APIKEY, GUID)
+sdclient = SdMonitorClient(sdc_url=URL, custom_headers=ibm_headers)
+
+# Define metrics to monitor
+metrics = [
+    {"id": "memory.limit.used.percent", "aggregations": {"time": "avg", "group": "avg"}},
+    {"id": "net.request.time", "aggregations": {"time": "max", "group": "avg"}},
+    {"id": "cpu.quota.used.percent", "aggregations": {"time": "avg", "group": "avg"}},
+    {"id": "net.http.error.count", "aggregations": {"time": "avg", "group": "avg"}},
+    {"id": "cpu.used.percent", "aggregations": {"time": "avg", "group": "avg"}}
+]
+
+# Namespace filter
+filter = "kubernetes.namespace.name = 'group-7'"
+
+############################### Parameters #################################
+sampling = 10  # Sampling time in seconds
+collection_duration = 60  # in seconds, from now to N seconds later
+
+progress_length = 60  # Length of the progress bar
+
+############################################################################
+
+# Define the time window for fetching data
+start = -sampling  # Fetch data for the last 'sampling' seconds
+end = 0
+
+# Initialize a list to store collected data
+data_list = []
+
+# Define data collection duration
+collection_end_time = time.time() + collection_duration
+
+############################### Functions ##################################
+
+def display_progress_bar():
+    elapsed_time = int(time.time() - (collection_end_time - collection_duration))
+    remaining_time = collection_duration - elapsed_time
+    filled_length = int(progress_length * elapsed_time // collection_duration)
+    bar = '━' * filled_length + ' ' * (progress_length - filled_length)
+
+    # Print the progress bar in a single line, updating in place
+    sys.stdout.write(f'\r[{bar}] [{elapsed_time}/{collection_duration}sec]')
+    sys.stdout.flush()
+################################  Continuous monitoring loop ###############################
+print("##1## Starting data collection...")
+while time.time() < collection_end_time:
+    ok, res = sdclient.get_data(metrics, start, end, sampling, filter=filter)
+    if ok:
+        # Collect data
+        for d in res['data']:
+            # Convert timestamp
+            data_time = d['t'] / 1000 if d['t'] > 1e10 else d['t']
+            readable_time = datetime.fromtimestamp(data_time)
+
+            # Extract metric values
+            data_row = {'Timestamp': readable_time}
+            for i, metric in enumerate(metrics):
+                value = d['d'][i]
+
+                # Convert units if necessary
+                if metric['id'] == 'net.request.time':
+                    value = float(value) / 1e6  # Convert ns to ms   # Assuming the value is in nanoseconds, convert to milliseconds
+                else:
+                    value = float(value)
+
+                data_row[metric['id']] = value
+
+            # Append to the data list
+            data_list.append(data_row)
+    else:
+        print(f"Failed to fetch data: {res}", flush=True)
+        sys.exit(1)
+    ## Display progress bar
+    display_progress_bar()
+
+    time.sleep(sampling)  # wait for the next sampling interval
+
+print("##2## Data collection complete.")
+
+# Create DataFrame from the collected data
+df = pd.DataFrame(data_list)
+
+# Remove duplicate entries based on the 'Timestamp' column
+df.drop_duplicates(subset=['Timestamp'], inplace=True)
+
+# Save the collected data to a CSV file
+df.to_csv('./data_collected/metrics_dataset.csv', index=False)
+print("##3## Dataset saved to 'metrics_dataset.csv'.")
+
+# Plotting each metric
+print("Generating plots...")
+# for metric in metrics:
+#     metric_id = metric['id']
+#     plt.figure(figsize=(12, 6))
+#     plt.plot(df['Timestamp'], df[metric_id], marker='o')
+#     plt.title(f"{metric_id} over Time")
+#     plt.xlabel('Time')
+#     if metric_id == 'memory.limit.used.percent':
+#         plt.ylabel('Memory Limit Used (%)')
+#     elif metric_id == 'net.request.time':
+#         plt.ylabel('Net Request Time (ms)')
+#     elif metric_id == 'cpu.quota.used.percent':
+#         plt.ylabel('CPU Quota Used (%)')
+#     elif metric_id == 'net.http.error.count':
+#         plt.ylabel('HTTP Error Count')
+#     elif metric_id == 'cpu.used.percent':
+#         plt.ylabel('CPU Used (%)')
+#     else:
+#         plt.ylabel(metric_id)
+#     plt.xticks(rotation=45)
+#     plt.tight_layout()
+#     plt.grid(True)
+#     plot_filename = f"{metric_id.replace('.', '_')}_plot.png"
+#     plt.savefig(plot_filename)
+#     plt.show()
+#     print(f"Plot saved to '{plot_filename}'.")
+
+print("All plots generated.")
