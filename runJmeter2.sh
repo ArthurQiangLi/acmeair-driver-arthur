@@ -74,4 +74,4 @@ jmeter -n -t acmeair-jmeter/scripts/AcmeAir-microservices-mpJwt.jmx \
  -JRAMP=${RAMP} \
  -JDELAY=${DELAY} > jmeter_output.log 2>&1
 
-echo "##### JMeter test completed. Check jmeter_output.log for details."
+echo "JMeter test completed. Check jmeter_output.log for details."
