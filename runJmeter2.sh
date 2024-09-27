@@ -10,32 +10,36 @@ fi
 # Get the Acme Air host
 HOST=$(oc get route acmeair-main-route -n group-${GROUP} --template='{{ .spec.host }}')
 PORT=80
-
+DURATION_BASE=$((60*5)) 
+THREAD_BASE=10
+USER_BASE=500
+RAMP_BASE=30
+DELAY_BASE=30
 # Accept workload level as an argument
 WORKLOAD=${1:-medium}
 
 # Set parameters based on workload level
 case "$WORKLOAD" in
     low)
-        THREAD=10
-        USER=500
-        DURATION=60
-        RAMP=10
-        DELAY=10
+        THREAD=$THREAD_BASE
+        USER=$USER_BASE
+        DURATION=$DURATION_BASE
+        RAMP=$RAMP_BASE
+        DELAY=$DELAY_BASE
         ;;
     medium)
-        THREAD=20
-        USER=1000
-        DURATION=60
-        RAMP=10
-        DELAY=10
+        THREAD=$((THREAD_BASE*2))  # Use $(( ... )) for arithmetic expressions
+        USER=$((USER_BASE*2))
+        DURATION=$DURATION_BASE
+        RAMP=$RAMP_BASE
+        DELAY=$DELAY_BASE
         ;;
     high)
-        THREAD=50
-        USER=2000
-        DURATION=60
-        RAMP=10
-        DELAY=10
+        THREAD=$((THREAD_BASE*5))
+        USER=$((USER_BASE*5))
+        DURATION=$DURATION_BASE
+        RAMP=$RAMP_BASE
+        DELAY=$DELAY_BASE
         ;;
     *)
         echo "Error: Invalid workload level. Please choose from: low, medium, high."
