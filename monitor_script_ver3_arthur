@@ -40,6 +40,34 @@ filter = "kubernetes.namespace.name = 'group-7'"
 sampling = 10  # Sampling time in seconds
 collection_duration = 60*6  # in seconds, from now to N seconds later
 
+# Utility Function Weights
+WEIGHTS = {
+    "average_response_time": 0.4,
+    "max_response_time": 0.4,
+    "cpu_utilization": 0.2
+}
+
+# Quality Requirements Thresholds
+THRESHOLDS = {
+    "average_response_time": {
+        "excellent": 150,
+        "acceptable": 300
+    },
+    "max_response_time": {
+        "excellent": 250,
+        "acceptable": 500
+    },
+    "cpu_utilization": {
+        "low": 30,
+        "high": 50
+    }
+}
+
+UTILITY_THRESHOLDS = {
+    "Optimal": 1.0,
+    "Acceptable": 0.4,
+    "Critical": 0.2
+}
 
 progress_length = 60  # Length of the progress bar
 output_dir = "./monitor_collections/" # Specify the output directory for saving plots
@@ -87,39 +115,46 @@ def plot_all_data_in_one_windows():
 
 def plot_all_data_in_sub_window():
     # Generate the subplots
-    num_metrics = len(metrics)
+    num_metrics = len(metrics) + 1  # <-- Include 'total_utility' as an additional metric
     rows, cols = 4, 2  # Set up a 3x2 grid for subplots
     fig, axs = plt.subplots(rows, cols, figsize=(15, 10))  # Create a figure with subplots
     fig.suptitle("Metrics Over Time", fontsize=16)
 
-    # Plot each metric in a separate subplot
+    # Plot each metric in a separate subplot, including 'total_utility'
     print("Generating plots...")
-    for idx, metric in enumerate(metrics):
+    for idx, metric in enumerate(metrics + [{"id": "total_utility"}]):  # <-- Added 'total_utility'
+    #for idx, metric in enumerate(metrics):
         metric_id = metric['id']
         row = idx // cols
         col = idx % cols
         ax = axs[row, col]  # Get the correct subplot
 
-        # Plot the metric on its subplot
-        ax.plot(df['Timestamp'], df[metric_id], marker='o')
-        ax.set_title(f"{metric_id}")
-        ax.set_xlabel('Time')
-        if metric_id == 'memory.limit.used.percent':
-            ax.set_ylabel('Memory Limit Used (%)')
-        elif metric_id == 'net.http.request.time':
-            ax.set_ylabel('Net Request Time (ms)')
-            ax.set_ylim(0, 600)  # <-- Set y-axis range for 'net.http.request.time'
-        elif metric_id == 'cpu.quota.used.percent':
-            ax.set_ylabel('CPU Quota Used (%)')
-        elif metric_id == 'net.http.request.time.worst':
-            ax.set_ylabel('Net Request Time Worst(ms)')
-            ax.set_ylim(0, 600)  # <-- Set y-axis range for 'net.http.request.time'
-        elif metric_id == 'cpu.used.percent':
-            ax.set_ylabel('CPU Used (%)')
-        else:
-            ax.set_ylabel(metric_id)
-        ax.grid(True)
-        ax.tick_params(axis='x', rotation=45)  # Rotate x-axis labels for readability
+        # Plot the metric on its subplot, if the data is present in the DataFrame
+        if metric_id in df.columns:
+            ax.plot(df['Timestamp'], df[metric_id], marker='o')
+            ax.set_title(f"{metric_id}")
+            ax.set_xlabel('Time')
+            
+            # Assign y-axis labels based on the metric ID
+            if metric_id == 'memory.limit.used.percent':
+                ax.set_ylabel('Memory Limit Used (%)')
+            elif metric_id == 'net.http.request.time':
+                ax.set_ylabel('Net Request Time (ms)')
+                ax.set_ylim(0, 600)
+            elif metric_id == 'cpu.quota.used.percent':
+                ax.set_ylabel('CPU Quota Used (%)')
+            elif metric_id == 'net.http.request.time.worst':
+                ax.set_ylabel('Net Request Time Worst(ms)')
+                ax.set_ylim(0, 600)
+            elif metric_id == 'total_utility':
+                ax.set_ylabel('Total Utility')
+                ax.set_ylim(0, 1.1)  # Set y-axis range for utility score
+            elif metric_id == 'cpu.used.percent':
+                ax.set_ylabel('CPU Used (%)')
+            else:
+                ax.set_ylabel(metric_id)
+            ax.grid(True)
+            ax.tick_params(axis='x', rotation=45)  # Rotate x-axis labels for readability
 
     # Hide any unused subplots
     for idx in range(num_metrics, rows * cols):
@@ -129,6 +164,72 @@ def plot_all_data_in_sub_window():
     plot_filename = os.path.join(output_dir, "combined_metrics_plot_subs.png")
     plt.savefig(plot_filename)
     plt.show()
+
+def calculate_utility(value, thresholds, is_cpu=False):
+    """
+    Calculate the utility score based on the value and defined thresholds.
+    Args:
+        value (float): The metric value.
+        thresholds (dict): Thresholds for utility calculation.
+        is_cpu (bool): Flag indicating if the metric is CPU utilization.
+
+    Returns:
+        float: Utility score (0, 0.5, or 1).
+    """
+    if not is_cpu:
+        if value <= thresholds["excellent"]:
+            return 1.0
+        elif thresholds["excellent"] < value <= thresholds["acceptable"]:
+            return 0.5
+        else:
+            return 0.0
+    else:
+        if value < thresholds["low"]:
+            return 1.0
+        elif thresholds["low"] <= value <= thresholds["high"]:
+            return 0.5
+        else:
+            return 0.0
+
+def realtime_analyzing():
+    """
+    Print real-time analysis for specific metrics.
+    """
+    # Check if there is data collected in the current iteration
+    if data_list:
+        # Get the latest data row
+        latest_data = data_list[-1]  # Access the last row of the collected data
+
+        # Print the required metrics if available in the latest data
+        net_request_time = latest_data.get('net.http.request.time', 'N/A')
+        net_request_time_worst = latest_data.get('net.http.request.time.worst', 'N/A')
+        cpu_quota_used = latest_data.get('cpu.quota.used.percent', 'N/A')
+
+        # print(f"Net HTTP Request Time: {net_request_time} ms, "
+        #       f"Net HTTP Request Time Worst: {net_request_time_worst} ms, "
+        #       f"CPU Quota Used: {cpu_quota_used} % \n")
+    if net_request_time is not None and net_request_time_worst is not None and cpu_quota_used is not None:
+        # Calculate individual utilities
+        u_avg_response = calculate_utility(net_request_time, THRESHOLDS["average_response_time"])
+        u_max_response = calculate_utility(net_request_time_worst, THRESHOLDS["max_response_time"])
+        u_cpu = calculate_utility(cpu_quota_used, THRESHOLDS["cpu_utilization"], is_cpu=True)
+    # Calculate total utility
+    total_utility = (
+        WEIGHTS["average_response_time"] * u_avg_response +
+        WEIGHTS["max_response_time"] * u_max_response +
+        WEIGHTS["cpu_utilization"] * u_cpu
+    )
+    # Determine overall status
+    if total_utility == UTILITY_THRESHOLDS["Optimal"]:
+        status = "Optimal"
+    elif UTILITY_THRESHOLDS["Acceptable"] <= total_utility < UTILITY_THRESHOLDS["Optimal"]:
+        status = "Acceptable"
+    else:
+        status = "Critical"
+    WEIGHTS["cpu_utilization"]
+    print(f"utility: {total_utility}, Status: {status}")
+    latest_data['total_utility'] = total_utility  # <-- Store total_utility as a new metric
+
 
 ######################  Continuous monitoring loop ##########################
 print("##1## Starting data collection...")
@@ -161,6 +262,7 @@ while time.time() < collection_end_time:
         sys.exit(1)
     ## Display progress bar
     display_progress_bar()
+    realtime_analyzing()
 
     time.sleep(sampling)  # wait for the next sampling interval
 
