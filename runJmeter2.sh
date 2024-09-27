@@ -19,8 +19,8 @@ case "$WORKLOAD" in
     low)
         THREAD=10
         USER=500
-        DURATION=60
-        RAMP=5
+        DURATION=10
+        RAMP=10
         DELAY=10
         ;;
     medium)
@@ -34,7 +34,7 @@ case "$WORKLOAD" in
         THREAD=50
         USER=2000
         DURATION=60
-        RAMP=20
+        RAMP=10
         DELAY=10
         ;;
     *)
@@ -74,4 +74,5 @@ jmeter -n -t acmeair-jmeter/scripts/AcmeAir-microservices-mpJwt.jmx \
  -JRAMP=${RAMP} \
  -JDELAY=${DELAY} > jmeter_output.log 2>&1
 
-echo "JMeter test completed. Check jmeter_output.log for details."
+echo 
+echo "#### JMeter test completed. Check jmeter_output.log for details."
