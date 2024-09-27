@@ -58,8 +58,8 @@ THRESHOLDS = {
         "acceptable": 500
     },
     "cpu_utilization": {
-        "low": 30,
-        "high": 50
+        "low": 10,
+        "high": 20
     }
 }
 
@@ -227,7 +227,7 @@ def realtime_analyzing():
     else:
         status = "Critical"
     WEIGHTS["cpu_utilization"]
-    print(f"utility: {total_utility}, Status: {status}")
+    print(f" utility={total_utility:.1f}, Status={status}, avg={net_request_time:.0f}, max={net_request_time_worst:.0f}, cpu={cpu_quota_used:.0f}")
     latest_data['total_utility'] = total_utility  # <-- Store total_utility as a new metric
 
 

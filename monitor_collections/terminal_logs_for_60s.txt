@@ -1,0 +1,436 @@
+PS C:\Users\iamle\Documents\local_acmeair_g7\acmeair-driver-arthur\acmeair-driver-arthur> & C_ver3_arthur
+##1## Starting data collection...
+[━                                                           ] [1/60sec]Net HTTP Request Time
+
+[━━━━━━━━━━━                                                 ] [11/60sec]Net HTTP Request Tim
+
+[━━━━━━━━━━━━━━━━━━━━━                                       ] [21/60sec]Net HTTP Request Tim
+
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                            ] [32/60sec]Net HTTP Request Tim
+
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                  ] [42/60sec]Net HTTP Request Tim
+
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━        ] [52/60sec]Net HTTP Request Tim
+##2## Data collection complete.
+##3## Dataset saved to 'metrics_dataset.csv'.
+##4## Generating plots...
+Generating plots...
+#### All done.
+PS C:\Users\iamle\Documents\local_acmeair_g7\acmeair-driver-arthur\acmeair-driver-arthur> & C_ver3_arthur
+##1## Starting data collection...
+[                                                            ] [0/60sec]Net HTTP Request Time
+
+[━━━━━━━━━━                                                  ] [10/60sec]Net HTTP Request Tim
+
+[━━━━━━━━━━━━━━━━━━━━                                        ] [20/60sec]Net HTTP Request Tim
+
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                              ] [30/60sec]Net HTTP Request Tim
+
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                    ] [40/60sec]Net HTTP Request Tim
+
+##2## Data collection complete.
+##3## Dataset saved to 'metrics_dataset.csv'.
+##4## Generating plots...
+Generating plots...
+#### All done.
+PS C:\Users\iamle\Documents\local_acmeair_g7\acmeair-driver-arthur\acmeair-driver-arthur> & C:/Users/iamle/AppData/Local/Programs/Python/Python310/python.exe c:/Users/iamle/Documents/local_acmeair_g7/acmeair-driver-arthur/acmeair-driver-arthur/monitor_script_ver3_arthur
+##1## Starting data collection...
+[━                                                           ] [1/60sec]utility: 1.0
+[━━━━━━━━━━━                                                 ] [11/60sec]utility: 1.0
+[━━━━━━━━━━━━━━━━━━━━━━                                      ] [22/60sec]utility: 1.0
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                            ] [32/60sec]utility: 1.0
+##2## Data collection complete.
+##3## Dataset saved to 'metrics_dataset.csv'.
+##4## Generating plots...
+Generating plots...
+#### All done.
+PS C:\Users\iamle\Documents\local_acmeair_g7\acmeair-driver-arthur\acmeair-driver-arthur> & C:/Users/iamle/AppData/Local/Programs/Python/Python310/python.exe c:/Users/iamle/Documents/local_acmeair_g7/acmeair-driver-arthur/acmeair-driver-arthur/monitor_script_ver3_arthur
+##1## Starting data collection...
+[                                                            ] [0/60sec]utility: 1.0
+[━━━━━━━━━━                                                  ] [10/60sec]utility: 1.0
+[━━━━━━━━━━━━━━━━━━━━━                                       ] [21/60sec]utility: 1.0
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                             ] [31/60sec]utility: 1.0
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                   ] [41/60sec]utility: 0.9
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━         ] [51/60sec]utility: 0.9
+##2## Data collection complete.
+##3## Dataset saved to 'metrics_dataset.csv'.
+##4## Generating plots...
+Generating plots...
+#### All done.
+PS C:\Users\iamle\Documents\local_acmeair_g7\acmeair-driver-arthur\acmeair-driver-arthur> & C:/Users/iamle/AppData/Local/Programs/Python/Python310/python.exe c:/Users/iamle/Documents/local_acmeair_g7/acmeair-driver-arthur/acmeair-driver-arthur/monitor_script_ver3_arthur
+##1## Starting data collection...
+[                                                            ] [0/360sec]utility: 1.0, Status: Optimal
+[━                                                           ] [10/360sec]utility: 1.0, Status: Optimal
+[━━━                                                         ] [21/360sec]utility: 1.0, Status: Optimal
+[━━━━━━                                                      ] [36/360sec]utility: 0.9, Status: Acceptable
+[━━━━━━━                                                     ] [47/360sec]utility: 0.9, Status: Acceptable
+[━━━━━━━━━                                                   ] [57/360sec]utility: 1.0, Status: Optimal
+[━━━━━━━━━━━                                                 ] [68/360sec]utility: 0.9, Status: Acceptable
+[━━━━━━━━━━━━━                                               ] [78/360sec]utility: 0.9, Status: Acceptable
+[━━━━━━━━━━━━━━                                              ] [88/360sec]utility: 0.9, Status: Acceptable
+[━━━━━━━━━━━━━━━━                                            ] [99/360sec]utility: 0.9, Status: Acceptable
+[━━━━━━━━━━━━━━━━━━                                          ] [110/360sec]utility: 0.9, Status: Acceptable
+[━━━━━━━━━━━━━━━━━━━━                                        ] [120/360sec]utility: 0.9, Status: Acceptable
+[━━━━━━━━━━━━━━━━━━━━━                                       ] [130/360sec]utility: 0.9, Status: Acceptable
+[━━━━━━━━━━━━━━━━━━━━━━━                                     ] [142/360sec]utility: 0.9, Status: Acceptable
+[━━━━━━━━━━━━━━━━━━━━━━━━━                                   ] [152/360sec]utility: 0.8, Status: Acceptable
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━                                 ] [162/360sec]utility: 0.9, Status: Acceptable
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━                                ] [172/360sec]utility: 0.9, Status: Acceptable
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                              ] [183/360sec]utility: 1.0, Status: Optimal
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                            ] [193/360sec]utility: 1.0, Status: Optimal
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                           ] [203/360sec]utility: 1.0, Status: Optimal
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                        ] [221/360sec]utility: 1.0, Status: Optimal
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                      ] [231/360sec]utility: 1.0, Status: Optimal
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                 ] [262/360sec]utility: 0.9, Status: Acceptable
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━               ] [272/360sec]utility: 0.9, Status: Acceptable
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━             ] [282/360sec]utility: 0.9, Status: Acceptable
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━            ] [292/360sec]utility: 1.0, Status: Optimal
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━          ] [302/360sec]utility: 1.0, Status: Optimal
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━        ] [313/360sec]utility: 0.9, Status: Acceptable
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━       ] [323/360sec]utility: 1.0, Status: Optimal
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━     ] [333/360sec]utility: 1.0, Status: Optimal
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━   ] [343/360sec]utility: 1.0, Status: Optimal
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ] [354/360sec]utility: 1.0, Status: Optimal
+##2## Data collection complete.
+##3## Dataset saved to 'metrics_dataset.csv'.
+##4## Generating plots...
+Generating plots...
+#### All done.
+PS C:\Users\iamle\Documents\local_acmeair_g7\acmeair-driver-arthur\acmeair-driver-arthur> & C:/Users/iamle/AppData/Local/Programs/Python/Python310/python.exe c:/Users/iamle/Documents/local_acmeair_g7/acmeair-driver-arthur/acmeair-driver-arthur/monitor_script_ver3_arthur
+##1## Starting data collection...
+[                                                            ] [0/360sec] utility=1.0, Status=Optimal, avg=78.221375733334, max=207.504740333334, cpu=1.0064
+[━                                                           ] [10/360sec] utility=0.8, Status=Acceptable, avg=121.961640333334, max=306.4022078, cpu=2.5928
+[━━━━                                                        ] [24/360sec] utility=0.9, Status=Acceptable, avg=4.422490843855, max=10.162887632133, cpu=19.7954
+[━━━━━                                                       ] [34/360sec] utility=0.8, Status=Acceptable, avg=4.456267281987, max=8.983487713821999, cpu=37.4502
+[━━━━━━━                                                     ] [45/360sec] utility=0.8, Status=Acceptable, avg=15.094144637573, max=38.891564980726, cpu=41.9614
+[━━━━━━━━━                                                   ] [55/360sec] utility=0.8, Status=Acceptable, avg=14.909967083904, max=37.937094401162, cpu=25.3942
+[━━━━━━━━━━                                                  ] [65/360sec] utility=0.8, Status=Acceptable, avg=21.106722674729998, max=54.663039243541, cpu=44.5788
+[━━━━━━━━━━━━                                                ] [75/360sec] utility=0.8, Status=Acceptable, avg=39.730069465448, max=109.78383640877, cpu=43.4828
+[━━━━━━━━━━━━━━                                              ] [87/360sec] utility=0.8, Status=Acceptable, avg=19.993169393761, max=49.905745230228, cpu=41.0194
+[━━━━━━━━━━━━━━━━                                            ] [97/360sec] utility=0.8, Status=Acceptable, avg=19.993169393761, max=49.905745230228, cpu=41.0194
+[━━━━━━━━━━━━━━━━━                                           ] [107/360sec] utility=0.8, Status=Acceptable, avg=45.464672959287, max=119.052513397713, cpu=40.4528
+[━━━━━━━━━━━━━━━━━━━                                         ] [118/360sec] utility=0.8, Status=Acceptable, avg=96.954825113021, max=238.155299217807, cpu=45.120334
+[━━━━━━━━━━━━━━━━━━━━━                                       ] [128/360sec] utility=0.8, Status=Acceptable, avg=96.954825113021, max=238.155299217807, cpu=43.4666
+[━━━━━━━━━━━━━━━━━━━━━━━                                     ] [138/360sec] utility=0.6000000000000001, Status=Acceptable, avg=138.37707199901502, max=452.4246242496, cpu=48.174601
+[━━━━━━━━━━━━━━━━━━━━━━━━                                    ] [148/360sec] utility=0.8, Status=Acceptable, avg=28.172147484893003, max=91.423426987422, cpu=46.933
+[━━━━━━━━━━━━━━━━━━━━━━━━━━                                  ] [158/360sec] utility=0.8, Status=Acceptable, avg=23.078605958709, max=73.516735887204, cpu=37.474
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━                                ] [168/360sec] utility=0.8, Status=Acceptable, avg=19.881917135346, max=47.703551517529, cpu=40.2436
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                               ] [179/360sec] utility=0.8, Status=Acceptable, avg=19.881917135346, max=47.703551517529, cpu=40.2436
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                             ] [189/360sec] utility=0.2, Status=Critical, avg=187.23662783910098, max=596.3079417414381, cpu=41.383
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                           ] [199/360sec] utility=0.2, Status=Critical, avg=187.23662783910098, max=596.3079417414381, cpu=41.383
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                          ] [209/360sec] utility=0.4, Status=Acceptable, avg=162.544704159287, max=488.15641545953, cpu=30.6862
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                        ] [219/360sec] utility=0.8, Status=Acceptable, avg=75.322411968055, max=176.42511306167998, cpu=37.3956
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                      ] [229/360sec] utility=0.8, Status=Acceptable, avg=75.322411968055, max=176.42511306167998, cpu=37.3956
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                 ] [260/360sec] utility=0.0, Status=Critical, avg=320.44761667838196, max=783.9810939176151, cpu=25.772
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━               ] [270/360sec] utility=0.2, Status=Critical, avg=177.20416655502302, max=993.5634759571541, cpu=31.1172
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━              ] [280/360sec] utility=0.2, Status=Critical, avg=236.339549130752, max=658.379369123501, cpu=30.801801
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━            ] [291/360sec] utility=0.2, Status=Critical, avg=252.15932174956, max=639.571691468591, cpu=31.983
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━          ] [301/360sec] utility=0.8, Status=Acceptable, avg=46.458378429319005, max=245.962986092495, cpu=39.153801
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━         ] [311/360sec] utility=0.8, Status=Acceptable, avg=46.458378429319005, max=245.962986092495, cpu=39.153801
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━       ] [321/360sec] utility=0.8, Status=Acceptable, avg=14.821829602666, max=34.296600682275, cpu=29.2282
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━     ] [331/360sec] utility=1.0, Status=Optimal, avg=11.68375318587, max=27.505100513514, cpu=4.297
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━   ] [342/360sec] utility=1.0, Status=Optimal, avg=41.742315492753995, max=109.9202185, cpu=1.792
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  ] [352/360sec] utility=1.0, Status=Optimal, avg=5.331670285715, max=11.843914666666999, cpu=1.2926
+##2## Data collection complete.
+##3## Dataset saved to 'metrics_dataset.csv'.
+##4## Generating plots...
+Generating plots...
+#### All done.
+PS C:\Users\iamle\Documents\local_acmeair_g7\acmeair-driver-arthur\acmeair-driver-arthur> & C:/Users/iamle/AppData/Local/Programs/Python/Python310/python.exe c:/Users/iamle/Documents/local_acmeair_g7/acmeair-driver-arthur/acmeair-driver-arthur/monitor_script_ver3_arthur
+##1## Starting data collection...
+[                                                            ] [0/360sec] utility=1.0, Status=Optimal, avg=6, max=12, cpu=1
+[━                                                           ] [11/360sec] utility=1.0, Status=Optimal, avg=6, max=12, cpu=1
+[━━━                                                         ] [21/360sec] utility=1.0, Status=Optimal, avg=89, max=181, cpu=3
+[━━━━━                                                       ] [31/360sec] utility=0.8, Status=Acceptable, avg=4, max=5, cpu=23
+[━━━━━━                                                      ] [41/360sec] utility=0.8, Status=Acceptable, avg=4, max=5, cpu=23
+[━━━━━━━━                                                    ] [51/360sec] utility=0.8, Status=Acceptable, avg=3, max=5, cpu=42
+[━━━━━━━━━━                                                  ] [61/360sec] utility=0.8, Status=Acceptable, avg=4, max=7, cpu=46
+[━━━━━━━━━━━                                                 ] [71/360sec] utility=0.8, Status=Acceptable, avg=4, max=7, cpu=46
+[━━━━━━━━━━━━━                                               ] [82/360sec] utility=0.8, Status=Acceptable, avg=4, max=7, cpu=46
+[━━━━━━━━━━━━━━━                                             ] [92/360sec] utility=0.8, Status=Acceptable, avg=4, max=8, cpu=35
+[━━━━━━━━━━━━━━━━━                                           ] [102/360sec] utility=0.8, Status=Acceptable, avg=4, max=8, cpu=47
+[━━━━━━━━━━━━━━━━━━                                          ] [112/360sec] utility=0.8, Status=Acceptable, avg=4, max=8, cpu=47
+[━━━━━━━━━━━━━━━━━━━━                                        ] [123/360sec] utility=0.8, Status=Acceptable, avg=4, max=8, cpu=47
+[━━━━━━━━━━━━━━━━━━━━━━                                      ] [133/360sec] utility=0.8, Status=Acceptable, avg=4, max=8, cpu=47
+[━━━━━━━━━━━━━━━━━━━━━━━                                     ] [143/360sec] utility=0.8, Status=Acceptable, avg=5, max=9, cpu=35
+[━━━━━━━━━━━━━━━━━━━━━━━━━                                   ] [154/360sec] utility=0.8, Status=Acceptable, avg=5, max=8, cpu=47
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━                                 ] [164/360sec] utility=0.8, Status=Acceptable, avg=5, max=8, cpu=47
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                               ] [174/360sec] utility=0.8, Status=Acceptable, avg=7, max=14, cpu=43
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                              ] [184/360sec] utility=0.8, Status=Acceptable, avg=7, max=14, cpu=43
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                            ] [194/360sec] utility=0.8, Status=Acceptable, avg=5, max=7, cpu=35
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                          ] [205/360sec] utility=0.8, Status=Acceptable, avg=5, max=9, cpu=47
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                         ] [215/360sec] utility=0.8, Status=Acceptable, avg=5, max=8, cpu=47
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                       ] [225/360sec] utility=0.8, Status=Acceptable, avg=5, max=8, cpu=47
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                  ] [256/360sec] utility=0.8, Status=Acceptable, avg=5, max=8, cpu=46
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                ] [267/360sec] utility=0.8, Status=Acceptable, avg=4, max=7, cpu=46
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━              ] [277/360sec] utility=0.8, Status=Acceptable, avg=5, max=8, cpu=45
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━             ] [287/360sec] utility=0.8, Status=Acceptable, avg=5, max=8, cpu=45
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━           ] [297/360sec] utility=0.8, Status=Acceptable, avg=5, max=8, cpu=46
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━         ] [308/360sec] utility=0.8, Status=Acceptable, avg=5, max=8, cpu=46
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━       ] [318/360sec] utility=0.8, Status=Acceptable, avg=5, max=8, cpu=46
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━      ] [328/360sec] utility=0.8, Status=Acceptable, avg=4, max=7, cpu=44
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━    ] [338/360sec] utility=1.0, Status=Optimal, avg=4, max=8, cpu=1
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  ] [351/360sec] utility=1.0, Status=Optimal, avg=4, max=8, cpu=1
+##2## Data collection complete.
+##3## Dataset saved to 'metrics_dataset.csv'.
+##4## Generating plots...
+Generating plots...
+#### All done.
+PS C:\Users\iamle\Documents\local_acmeair_g7\acmeair-driver-arthur\acmeair-driver-arthur> & C:/Users/iamle/AppData/Local/Programs/Python/Python310/python.exe c:/Users/iamle/Documents/local_acmeair_g7/acmeair-driver-arthur/acmeair-driver-arthur/monitor_script_ver3_arthur
+##1## Starting data collection...
+[                                                            ] [0/360sec] utility=1.0, Status=Optimal, avg=4, max=8, cpu=1
+[━                                                           ] [10/360sec] utility=1.0, Status=Optimal, avg=4, max=8, cpu=1
+[━━━                                                         ] [20/360sec] utility=0.8, Status=Acceptable, avg=100, max=324, cpu=2
+[━━━━━                                                       ] [30/360sec] utility=0.9, Status=Acceptable, avg=3, max=4, cpu=16
+[━━━━━━                                                      ] [40/360sec] utility=0.9, Status=Acceptable, avg=3, max=4, cpu=16
+[━━━━━━━━                                                    ] [50/360sec] utility=0.8, Status=Acceptable, avg=2, max=4, cpu=39
+[━━━━━━━━━━                                                  ] [61/360sec] utility=0.8, Status=Acceptable, avg=3, max=6, cpu=44
+[━━━━━━━━━━━                                                 ] [71/360sec] utility=0.8, Status=Acceptable, avg=4, max=7, cpu=46
+[━━━━━━━━━━━━━                                               ] [81/360sec] utility=0.8, Status=Acceptable, avg=6, max=22, cpu=44
+[━━━━━━━━━━━━━━━                                             ] [91/360sec] utility=0.8, Status=Acceptable, avg=4, max=7, cpu=46
+[━━━━━━━━━━━━━━━━                                            ] [101/360sec] utility=0.8, Status=Acceptable, avg=4, max=7, cpu=46
+[━━━━━━━━━━━━━━━━━━                                          ] [112/360sec] utility=0.8, Status=Acceptable, avg=5, max=8, cpu=45
+[━━━━━━━━━━━━━━━━━━━━                                        ] [122/360sec] utility=0.8, Status=Acceptable, avg=4, max=6, cpu=46
+[━━━━━━━━━━━━━━━━━━━━━━                                      ] [132/360sec] utility=0.8, Status=Acceptable, avg=4, max=8, cpu=46
+[━━━━━━━━━━━━━━━━━━━━━━━                                     ] [142/360sec] utility=0.8, Status=Acceptable, avg=4, max=7, cpu=45
+[━━━━━━━━━━━━━━━━━━━━━━━━━                                   ] [152/360sec] utility=0.8, Status=Acceptable, avg=4, max=8, cpu=45
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━                                 ] [163/360sec] utility=0.8, Status=Acceptable, avg=5, max=8, cpu=46
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━                                ] [173/360sec] utility=0.8, Status=Acceptable, avg=5, max=8, cpu=46
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                              ] [183/360sec] utility=0.8, Status=Acceptable, avg=4, max=7, cpu=46
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                            ] [194/360sec] utility=0.8, Status=Acceptable, avg=4, max=8, cpu=46
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                          ] [204/360sec] utility=0.8, Status=Acceptable, avg=5, max=10, cpu=43
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                         ] [214/360sec] utility=0.8, Status=Acceptable, avg=5, max=9, cpu=44
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                       ] [224/360sec] utility=0.8, Status=Acceptable, avg=5, max=8, cpu=46
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                     ] [234/360sec] utility=0.8, Status=Acceptable, avg=6, max=15, cpu=46
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                    ] [245/360sec] utility=0.8, Status=Acceptable, avg=5, max=8, cpu=45
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                  ] [255/360sec] utility=0.8, Status=Acceptable, avg=5, max=7, cpu=45
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                ] [265/360sec] utility=0.8, Status=Acceptable, avg=4, max=6, cpu=44
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━               ] [275/360sec] utility=0.8, Status=Acceptable, avg=5, max=9, cpu=45
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━             ] [286/360sec] utility=0.8, Status=Acceptable, avg=5, max=9, cpu=47
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━           ] [296/360sec] utility=0.8, Status=Acceptable, avg=4, max=7, cpu=45
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━         ] [306/360sec] utility=0.8, Status=Acceptable, avg=4, max=6, cpu=45
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━        ] [316/360sec] utility=0.8, Status=Acceptable, avg=4, max=6, cpu=46
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━      ] [326/360sec] utility=0.8, Status=Acceptable, avg=4, max=7, cpu=45
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━    ] [337/360sec] utility=0.9, Status=Acceptable, avg=4, max=8, cpu=11
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━   ] [347/360sec] utility=1.0, Status=Optimal, avg=4, max=7, cpu=1
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ] [357/360sec] utility=1.0, Status=Optimal, avg=6, max=9, cpu=1
+##2## Data collection complete.
+##3## Dataset saved to 'metrics_dataset.csv'.
+##4## Generating plots...
+Generating plots...
+#### All done.
+PS C:\Users\iamle\Documents\local_acmeair_g7\acmeair-driver-arthur\acmeair-driver-arthur>
+
+
+
+
+iamle@DESKTOP-V3SCC0E MINGW64 ~/Documents/local_acmeair_g7/acmeair-driver-arthur/acm
+$ ./runJmeter2.sh high
+Workload Level: high
+HOST=acmeair7.mycluster-ca-tor-2-bx2-4x-04e8c71ff333c8969bc4cbc5a77a70f6-0000.ca-tor
+PORT=80
+THREAD=500
+USER=5000
+DURATION=300
+RAMP=20
+DELAY=30
+Cleared bookings in 0.124 secondsLoaded flights for 5 days in 1.35 secondsLoaded 100
+#### JMeter test completed. Check jmeter_output.log for details.
+
+iamle@DESKTOP-V3SCC0E MINGW64 ~/Documents/local_acmeair_g7/acmeair-driver-arthur/acm
+$ ./runJmeter2.sh high
+Workload Level: high
+HOST=acmeair7.mycluster-ca-tor-2-bx2-4x-04e8c71ff333c8969bc4cbc5a77a70f6-0000.ca-tor
+PORT=80
+THREAD=500
+USER=5000
+DURATION=300
+RAMP=20
+DELAY=30
+Cleared bookings in 0.103 secondsLoaded flights for 5 days in 1.562 secondsLoaded 10
+#### JMeter test completed. Check jmeter_output.log for details.
+
+iamle@DESKTOP-V3SCC0E MINGW64 ~/Documents/local_acmeair_g7/acmeair-driver-arthur/acm
+$ ./runJmeter2.sh high
+Workload Level: high
+HOST=acmeair7.mycluster-ca-tor-2-bx2-4x-04e8c71ff333c8969bc4cbc5a77a70f6-0000.ca-tor
+PORT=80
+THREAD=500
+USER=5000
+DURATION=300
+RAMP=20
+DELAY=30
+Cleared bookings in 0.109 secondsLoaded flights for 5 days in 2.624 secondsLoaded 10
+#### JMeter test completed. Check jmeter_output.log for details.
+
+iamle@DESKTOP-V3SCC0E MINGW64 ~/Documents/local_acmeair_g7/acmeair-driver-arthur/acm
+$ ./runJmeter2.sh high
+Workload Level: high
+HOST=acmeair7.mycluster-ca-tor-2-bx2-4x-04e8c71ff333c8969bc4cbc5a77a70f6-0000.ca-tor
+PORT=80
+THREAD=1000
+USER=10000
+DURATION=300
+RAMP=20
+DELAY=30
+Cleared bookings in 0.122 secondsLoaded flights for 5 days in 1.506 secondsLoaded 10
+#### JMeter test completed. Check jmeter_output.log for details.
+
+iamle@DESKTOP-V3SCC0E MINGW64 ~/Documents/local_acmeair_g7/acmeair-driver-arthur/acm
+$ ./runJmeter2.sh high
+Workload Level: high
+HOST=acmeair7.mycluster-ca-tor-2-bx2-4x-04e8c71ff333c8969bc4cbc5a77a70f6-0000.ca-tor
+PORT=80
+THREAD=1000
+USER=10000
+DURATION=300
+RAMP=20
+DELAY=30
+Cleared bookings in 0.249 secondsLoaded flights for 5 days in 1.343 secondsLoaded 10
+#### JMeter test completed. Check jmeter_output.log for details.
+
+iamle@DESKTOP-V3SCC0E MINGW64 ~/Documents/local_acmeair_g7/acmeair-driver-arthur/acm
+$ ./runJmeter2.sh low
+Workload Level: low
+HOST=acmeair7.mycluster-ca-tor-2-bx2-4x-04e8c71ff333c8969bc4cbc5a77a70f6-0000.ca-tor
+PORT=80
+THREAD=50
+USER=500
+DURATION=300
+RAMP=20
+DELAY=30
+Cleared bookings in 0.212 secondsLoaded flights for 5 days in 1.636 secondsLoaded 10
+#### JMeter test completed. Check jmeter_output.log for details.
+
+iamle@DESKTOP-V3SCC0E MINGW64 ~/Documents/local_acmeair_g7/acmeair-driver-arthur/acm
+$ ./runJmeter2.sh high
+Workload Level: high
+HOST=acmeair7.mycluster-ca-tor-2-bx2-4x-04e8c71ff333c8969bc4cbc5a77a70f6-0000.ca-tor
+PORT=80
+THREAD=1000
+USER=10000
+DURATION=300
+RAMP=20
+DELAY=30
+Cleared bookings in 0.018 secondsLoaded flights for 5 days in 2.473 secondsLoaded 10
+#### JMeter test completed. Check jmeter_output.log for details.
+
+iamle@DESKTOP-V3SCC0E MINGW64 ~/Documents/local_acmeair_g7/acmeair-driver-arthur/acm
+$ ./runJmeter2.sh low
+Workload Level: low
+HOST=acmeair7.mycluster-ca-tor-2-bx2-4x-04e8c71ff333c8969bc4cbc5a77a70f6-0000.ca-tor
+PORT=80
+THREAD=50
+USER=500
+DURATION=300
+RAMP=20
+DELAY=30
+Cleared bookings in 0.217 secondsLoaded flights for 5 days in 1.304 secondsLoaded 10
+#### JMeter test completed. Check jmeter_output.log for details.
+
+iamle@DESKTOP-V3SCC0E MINGW64 ~/Documents/local_acmeair_g7/acmeair-driver-arthur/acm
+$ ./runJmeter2.sh low
+Workload Level: low
+HOST=acmeair7.mycluster-ca-tor-2-bx2-4x-04e8c71ff333c8969bc4cbc5a77a70f6-0000.ca-tor
+PORT=80
+THREAD=50
+USER=500
+DELAY=30
+Cleared bookings in 0.016 secondsLoaded flights for 5 days in 1.366 secondsLoaded 10003 customers in 0.358 seconds
+#### JMeter test completed. Check jmeter_output.log for details.
+
+iamle@DESKTOP-V3SCC0E MINGW64 ~/Documents/local_acmeair_g7/acmeair-driver-arthur/acmeair-driver-arthur (main)
+$ ./runJmeter2.sh low
+Workload Level: low
+HOST=acmeair7.mycluster-ca-tor-2-bx2-4x-04e8c71ff333c8969bc4cbc5a77a70f6-0000.ca-tor.containers.appdomain.cloud
+PORT=80
+THREAD=50
+USER=500
+DURATION=300
+RAMP=20
+DELAY=30
+Cleared bookings in 0.015 secondsLoaded flights for 5 days in 2.144 secondsLoaded 10003 customers in 0.517 seconds
+#### JMeter test completed. Check jmeter_output.log for details.
+
+iamle@DESKTOP-V3SCC0E MINGW64 ~/Documents/local_acmeair_g7/acmeair-driver-arthur/acmeair-driver-arthur (main)
+$ ./runJmeter2.sh low
+Workload Level: low
+HOST=acmeair7.mycluster-ca-tor-2-bx2-4x-04e8c71ff333c8969bc4cbc5a77a70f6-0000.ca-tor.containers.appdomain.cloud
+PORT=80
+THREAD=50
+USER=500
+DURATION=300
+RAMP=20
+DELAY=30
+Cleared bookings in 0.018 secondsLoaded flights for 5 days in 2.421 secondsLoaded 10003 customers in 0.353 seconds
+#### JMeter test completed. Check jmeter_output.log for details.
+
+iamle@DESKTOP-V3SCC0E MINGW64 ~/Documents/local_acmeair_g7/acmeair-driver-arthur/acmeair-driver-arthur (main)
+$
+
+iamle@DESKTOP-V3SCC0E MINGW64 ~/Documents/local_acmeair_g7/acmeair-driver-arthur/acmeair-driver-arthur (main)
+$ 
+
+iamle@DESKTOP-V3SCC0E MINGW64 ~/Documents/local_acmeair_g7/acmeair-driver-arthur/acmeair-driver-arthur (main)
+$ 
+
+iamle@DESKTOP-V3SCC0E MINGW64 ~/Documents/local_acmeair_g7/acmeair-driver-arthur/acmeair-driver-arthur (main)
+$ 
+
+iamle@DESKTOP-V3SCC0E MINGW64 ~/Documents/local_acmeair_g7/acmeair-driver-arthur/acmeair-driver-arthur (main)
+$
+
+iamle@DESKTOP-V3SCC0E MINGW64 ~/Documents/local_acmeair_g7/acmeair-driver-arthur/acmeair-driver-arthur (main)
+$ ./runJmeter2.sh high
+Workload Level: high
+HOST=acmeair7.mycluster-ca-tor-2-bx2-4x-04e8c71ff333c8969bc4cbc5a77a70f6-0000.ca-tor.containers.appdomain.cloud
+PORT=80
+THREAD=1000
+USER=10000
+DURATION=300
+RAMP=20
+DELAY=30
+Cleared bookings in 0.018 secondsLoaded flights for 5 days in 2.372 secondsLoaded 10003 customers in 0.426 seconds
+#### JMeter test completed. Check jmeter_output.log for details.
+
+iamle@DESKTOP-V3SCC0E MINGW64 ~/Documents/local_acmeair_g7/acmeair-driver-arthur/acmeair-driver-arthur (main)
+$ ./runJmeter2.sh high
+Workload Level: high
+HOST=acmeair7.mycluster-ca-tor-2-bx2-4x-04e8c71ff333c8969bc4cbc5a77a70f6-0000.ca-tor.containers.appdomain.cloud
+PORT=80
+THREAD=1000
+USER=10000
+DURATION=300
+RAMP=20
+DELAY=30
+Cleared bookings in 0.13 secondsLoaded flights for 5 days in 1.516 secondsLoaded 10003 customers in 0.464 seconds
+#### JMeter test completed. Check jmeter_output.log for details.
+
+iamle@DESKTOP-V3SCC0E MINGW64 ~/Documents/local_acmeair_g7/acmeair-driver-arthur/acmeair-driver-arthur (main)
+$ ./runJmeter2.sh low
+Workload Level: low
+HOST=acmeair7.mycluster-ca-tor-2-bx2-4x-04e8c71ff333c8969bc4cbc5a77a70f6-0000.ca-tor.containers.appdomain.cloud
+PORT=80
+THREAD=50
+USER=500
+DURATION=300
+RAMP=20
+DELAY=30
+Cleared bookings in 0.145 secondsLoaded flights for 5 days in 1.579 secondsLoaded 10003 customers in 0.36 seconds
+#### JMeter test completed. Check jmeter_output.log for details.
+
+iamle@DESKTOP-V3SCC0E MINGW64 ~/Documents/local_acmeair_g7/acmeair-driver-arthur/acmeair-driver-arthur (main)
+$ ./runJmeter2.sh low
+Workload Level: low
+HOST=acmeair7.mycluster-ca-tor-2-bx2-4x-04e8c71ff333c8969bc4cbc5a77a70f6-0000.ca-tor.containers.appdomain.cloud
+PORT=80
+THREAD=50
+USER=500
+DURATION=300
+RAMP=20
+DELAY=30
+Cleared bookings in 0.015 secondsLoaded flights for 5 days in 1.285 secondsLoaded 10003 customers in 0.311 seconds
+#### JMeter test completed. Check jmeter_output.log for details.
+
+iamle@DESKTOP-V3SCC0E MINGW64 ~/Documents/local_acmeair_g7/acmeair-driver-arthur/acmeair-driver-arthur (main)
+$
