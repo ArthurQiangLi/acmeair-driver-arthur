@@ -19,7 +19,7 @@ case "$WORKLOAD" in
     low)
         THREAD=10
         USER=500
-        DURATION=10
+        DURATION=60
         RAMP=10
         DELAY=10
         ;;
