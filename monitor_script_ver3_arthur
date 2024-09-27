@@ -102,16 +102,18 @@ def plot_all_data_in_sub_window():
 
         # Plot the metric on its subplot
         ax.plot(df['Timestamp'], df[metric_id], marker='o')
-        ax.set_title(f"{metric_id} over Time")
+        ax.set_title(f"{metric_id}")
         ax.set_xlabel('Time')
         if metric_id == 'memory.limit.used.percent':
             ax.set_ylabel('Memory Limit Used (%)')
-        elif metric_id == 'net.request.time':
+        elif metric_id == 'net.http.request.time':
             ax.set_ylabel('Net Request Time (ms)')
+            ax.set_ylim(0, 600)  # <-- Set y-axis range for 'net.http.request.time'
         elif metric_id == 'cpu.quota.used.percent':
             ax.set_ylabel('CPU Quota Used (%)')
-        elif metric_id == 'net.http.error.count':
-            ax.set_ylabel('HTTP Error Count')
+        elif metric_id == 'net.http.request.time.worst':
+            ax.set_ylabel('Net Request Time Worst(ms)')
+            ax.set_ylim(0, 600)  # <-- Set y-axis range for 'net.http.request.time'
         elif metric_id == 'cpu.used.percent':
             ax.set_ylabel('CPU Used (%)')
         else:
