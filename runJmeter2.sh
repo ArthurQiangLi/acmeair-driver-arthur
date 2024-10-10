@@ -55,6 +55,7 @@ echo "USER=${USER}"
 echo "DURATION=${DURATION}"
 echo "RAMP=${RAMP}"
 echo "DELAY=${DELAY}"
+echo "#### Running JMeter..."
 # exit 1
 
 # Check if host is reachable
