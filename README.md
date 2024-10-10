@@ -162,4 +162,6 @@ Traceback (most recent call last):
   File "C:\Users\iamle\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\adapters.py", line 700, in send
     raise ConnectionError(e, request=request)
 requests.exceptions.ConnectionError: HTTPSConnectionPool(host='c104-e.ca-tor.containers.cloud.ibm.com', port=30227): Max retries exceeded with url: /apis/apps/v1/namespaces/group-7/deployments/acmeair-mainservice/scale (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001FBB5FA3CD0>: Failed to resolve 'c104-e.ca-tor.containers.cloud.ibm.com' ([Errno 11001] getaddrinfo failed)"))
+
+
 ```
