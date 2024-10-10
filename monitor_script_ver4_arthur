@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import sys, os
+import sys, os, requests
 import time
 from datetime import datetime, timedelta
 import pandas as pd
@@ -72,6 +72,23 @@ UTILITY_THRESHOLDS = {
 
 progress_length = 60  # Length of the progress bar
 output_dir = "./monitor_collections/" # Specify the output directory for saving plots
+
+# OpenShift parameters
+openshift_server = "https://c104-e.ca-tor.containers.cloud.ibm.com:30227"
+namespace = "group-7"
+deployment_name = "acmeair-mainservice"
+token = "sha256~gsDM7K2dv17_jLvCSM9UMAZ9G4eccInr4OJR53gQZrY"
+
+# Headers for OpenShift API
+headers = {
+    "Authorization": f"Bearer {token}",
+    "Accept": "application/json",
+    "Content-Type": "application/json"
+}
+
+# Define the OpenShift API URL for scaling
+scale_url = f"{openshift_server}/apis/apps/v1/namespaces/{namespace}/deployments/{deployment_name}/scale"
+
 ############################# Initiating data ##############################
 # Define the time window for fetching data
 start = -sampling  # Fetch data for the last 'sampling' seconds
@@ -232,11 +249,55 @@ def realtime_analyzing():
     latest_data['total_utility'] = total_utility  # <-- Store total_utility as a new metric
     return total_utility
 
-def planning():
-    return
+current_pods = 1
+def planning(total_utility): # return the pod planned.
+    global current_pods  # Use the global variable to track the number of pods
+    if total_utility <= 0.6:
+        current_pods += 1
+    elif total_utility > 0.9:
+        current_pods -= 1
+    else:
+        print(f"[Planning] Total utility {total_utility:.2f} is sufficient. No action required.")
+        return current_pods
+    current_pods = max(1, min(current_pods, 5))
+    print(f"[Planning] Total utility is {total_utility:.2f}. Planning pod= {current_pods}.")
+    return current_pods
 
-def executing():
-    return
+def executing(new_replicas):
+    # Step 1: Read the current number of replicas from the OpenShift deployment
+    get_response = requests.get(scale_url, headers=headers, verify=False)
+    if get_response.status_code == 200:
+        current_replicas = get_response.json()["spec"]["replicas"]
+    else:
+        print(f"#### Get return error = {get_response.status_code}.")
+        return
+        
+    if(current_replicas == new_replicas):
+        print(f"Current replicas: {current_replicas}, no need to change.")
+        return
+    
+    print(f"Executing adaptation plan: Scaling up pods from {current_replicas} to {new_replicas}...")
+    # Step 2: Construct the payload with metadata
+    scale_payload = {
+        "apiVersion": "autoscaling/v1",
+        "kind": "Scale",
+        "metadata": {
+            "name": deployment_name,
+            "namespace": namespace
+        },
+        "spec": {
+            "replicas": new_replicas
+        }
+    }
+
+    # Step 3: Send the PUT request to the OpenShift API to update the deployment
+    response = requests.put(scale_url, headers=headers, json=scale_payload, verify=False)
+
+    # Step 4: Output the result
+    if response.status_code == 200:
+        print(f"Successfully scaled up to {new_replicas} replicas.")
+    else:
+        print(f"Failed to update replicas: {response.status_code} - {response.text}")
 
 ######################  Continuous monitoring loop ##########################
 print("##1## Starting data collection...")
@@ -271,8 +332,8 @@ while time.time() < collection_end_time:
     display_progress_bar()
     total_utilitity = realtime_analyzing()
     if(ENABLE_SELF_ADAPTATION): # if enabled a2's planning and executing, run these two functions.
-        planning()
-        executing()
+        planning(total_utilitity)
+        executing(current_pods)
 
     time.sleep(sampling)  # wait for the next sampling interval
 

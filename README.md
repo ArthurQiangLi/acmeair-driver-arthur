@@ -102,3 +102,64 @@ returns:
   }
 }* Connection #0 to host c104-e.ca-tor.containers.cloud.ibm.com left intact
 ```
+
+
+
+## Error info
+```
+[Planning] Total utility 0.80 is sufficient. No action required.
+Traceback (most recent call last):
+  File "C:\Users\iamle\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\iamle\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\iamle\AppData\Local\Programs\Python\Python310\lib\socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\iamle\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "C:\Users\iamle\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 490, in _make_request
+    raise new_e
+  File "C:\Users\iamle\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 466, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\iamle\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 1095, in _validate_conn
+    conn.connect()
+  File "C:\Users\iamle\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 615, in connect
+    self.sock = sock = self._new_conn()
+  File "C:\Users\iamle\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 203, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x000001FBB5FA3CD0>: Failed to resolve 'c104-e.ca-tor.containers.cloud.ibm.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\iamle\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "C:\Users\iamle\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 843, in urlopen
+  File "C:\Users\iamle\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='c104-e.ca-tor.containers.cloud.ibm.com', port=30227): Max retries exceeded with url: /apis/apps/v1/namespaces/group-7/deployments/acmeair-mainservice/scale (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001FBB5FA3CD0>: Failed to resolve 'c104-e.ca-tor.containers.cloud.ibm.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\iamle\Documents\local_acmeair_g7\acmeair-driver-arthur\acmeair-driver-arthur\monitor_script_ver4_arthur", line 336, in <module>
+    executing(current_pods)
+  File "c:\Users\iamle\Documents\local_acmeair_g7\acmeair-driver-arthur\acmeair-driver-arthur\monitor_script_ver4_arthur", line 268, in executing
+    get_response = requests.get(scale_url, headers=headers, verify=False)
+  File "C:\Users\iamle\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "C:\Users\iamle\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\iamle\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\iamle\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\iamle\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='c104-e.ca-tor.containers.cloud.ibm.com', port=30227): Max retries exceeded with url: /apis/apps/v1/namespaces/group-7/deployments/acmeair-mainservice/scale (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001FBB5FA3CD0>: Failed to resolve 'c104-e.ca-tor.containers.cloud.ibm.com' ([Errno 11001] getaddrinfo failed)"))
+```
