@@ -39,7 +39,7 @@ metrics = [
 filter = "kubernetes.namespace.name = 'group-7'"
 
 ############################### Parameters #################################
-ENABLE_SELF_ADAPTATION = True
+ENABLE_SELF_ADAPTATION = True#True
 sampling = 10  # Sampling time in seconds
 collection_duration = 60*10  # in seconds, from now to N seconds later
 
@@ -275,10 +275,10 @@ def planning(total_utility, current_pods): # return the pod planned.
     elif total_utility > 0.9:
         current_pods -= 1
     else:
-        print(f"[Planning] Total utility {total_utility:.2f} is sufficient. No action required.")
+        #print(f"[Planning] Total utility {total_utility:.2f} is sufficient. No action required.")
         return current_pods
     current_pods = max(1, min(current_pods, 2))
-    print(f"[Planning] Total utility is {total_utility:.2f}. Planning pod= {current_pods}.")
+    #print(f"[Planning] Total utility is {total_utility:.2f}. Planning pod= {current_pods}.")
     return current_pods
 
 def get_current_replicas(deployment_name, max_retries=5):  # Try N times to get access to OpenShift
@@ -306,7 +306,7 @@ def executing(deployment_name, new_replicas, max_retries=5):
     if current_replicas == -1:
         return       
     if current_replicas == new_replicas:
-        print(f"Current replicas for {deployment_name}: {current_replicas}, no need to change.")
+        #print(f"Current replicas for {deployment_name}: {current_replicas}, no need to change.")
         return
     
     print(f"Executing adaptation plan: Scaling {deployment_name} pods from {current_replicas} to {new_replicas}...")
@@ -333,6 +333,8 @@ def executing(deployment_name, new_replicas, max_retries=5):
         time.sleep(2)  # Wait before retrying
 
     print(f"Max retries exceeded while trying to update replicas for {deployment_name}.")
+
+
 
 
 ######################  Continuous monitoring loop ##########################
