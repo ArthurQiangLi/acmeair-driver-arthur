@@ -79,7 +79,7 @@ output_dir = "./monitor_collections/" # Specify the output directory for saving 
 openshift_server = "https://c104-e.ca-tor.containers.cloud.ibm.com:30227"
 namespace = "group-7"
 # deployment_name = "acmeair-mainservice"
-token = "sha256~aUU7OCqVDPkmNTE30k6urvTjg-Pw5Y6OaLbP0xzpWr8"
+token = "sha256~5sZfQ6BaI1YPz4XqzjKgC04i01Vb-P9_vF7Z850xtGE"#"sha256~aUU7OCqVDPkmNTE30k6urvTjg-Pw5Y6OaLbP0xzpWr8"
 
 # Headers for OpenShift API
 headers = {
@@ -277,7 +277,7 @@ def planning(total_utility, current_pods): # return the pod planned.
     else:
         #print(f"[Planning] Total utility {total_utility:.2f} is sufficient. No action required.")
         return current_pods
-    current_pods = max(1, min(current_pods, 2))
+    current_pods = max(1, min(current_pods, 3))
     #print(f"[Planning] Total utility is {total_utility:.2f}. Planning pod= {current_pods}.")
     return current_pods
 
