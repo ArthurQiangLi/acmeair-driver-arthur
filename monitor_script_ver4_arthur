@@ -334,8 +334,27 @@ def executing(deployment_name, new_replicas, max_retries=5):
 
     print(f"Max retries exceeded while trying to update replicas for {deployment_name}.")
 
+def get_current_image(deployment_name):
+    resource_url = f"{openshift_server}/apis/apps/v1/namespaces/{namespace}/deployments/{deployment_name}"
+    try:
+        response = requests.get(resource_url, headers=headers, verify=False)
+        if response.status_code == 200:
+            return response.json()["spec"]["template"]["spec"]["containers"][0]["image"]
+        else:
+            print(f"Failed to retrieve the current image for {deployment_name}: {response.status_code} - {response.text}")
+            return None
+    except requests.ConnectionError as e:
+        print(f"Connection error while retrieving the current image for {deployment_name}: {str(e)}")
+        return None
+
 def adjust_resources(deployment_name, cpu_request, memory_request, cpu_limit, memory_limit, max_retries=5):
     resource_url = f"{openshift_server}/apis/apps/v1/namespaces/{namespace}/deployments/{deployment_name}"
+    current_image = get_current_image(deployment_name)
+    
+    if not current_image:
+        print(f"Cannot adjust resources for {deployment_name} because the image could not be retrieved.")
+        return
+
     payload = {
         "spec": {
             "template": {
@@ -343,6 +362,7 @@ def adjust_resources(deployment_name, cpu_request, memory_request, cpu_limit, me
                     "containers": [
                         {
                             "name": deployment_name,
+                            "image": current_image,  # Include the current image here
                             "resources": {
                                 "requests": {
                                     "cpu": cpu_request,
@@ -380,8 +400,9 @@ def adjust_resources(deployment_name, cpu_request, memory_request, cpu_limit, me
     print(f"Max retries exceeded while trying to adjust resources for {deployment_name}.")
 
 
+
 def planning_resource_adjustment(total_utility):
-    if total_utility < 0.4:  # Threshold for critical condition
+    if total_utility <= 0.6:  # Threshold for critical condition
         # Example values, adjust as needed based on actual usage patterns
         new_cpu_request = "500m"  # 0.5 vCPU
         new_memory_request = "512Mi"
@@ -391,7 +412,7 @@ def planning_resource_adjustment(total_utility):
         # Apply resource changes to critical services
         for deployment_name in deployments.keys():
             adjust_resources(deployment_name, new_cpu_request, new_memory_request, new_cpu_limit, new_memory_limit)
-    elif total_utility > 0.8:  # Threshold for optimal condition
+    elif total_utility >= 1.0:  # Threshold for optimal condition
         # Scale down the resources if utility is high and resources are under-utilized
         new_cpu_request = "250m"  # 0.25 vCPU
         new_memory_request = "256Mi"
