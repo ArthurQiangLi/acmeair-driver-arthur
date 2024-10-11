@@ -41,7 +41,7 @@ filter = "kubernetes.namespace.name = 'group-7'"
 ############################### Parameters #################################
 ENABLE_SELF_ADAPTATION = True
 sampling = 10  # Sampling time in seconds
-collection_duration = 60*6  # in seconds, from now to N seconds later
+collection_duration = 60*10  # in seconds, from now to N seconds later
 
 # Utility Function Weights
 WEIGHTS = {
@@ -79,7 +79,7 @@ output_dir = "./monitor_collections/" # Specify the output directory for saving 
 openshift_server = "https://c104-e.ca-tor.containers.cloud.ibm.com:30227"
 namespace = "group-7"
 # deployment_name = "acmeair-mainservice"
-token = "sha256~gsDM7K2dv17_jLvCSM9UMAZ9G4eccInr4OJR53gQZrY"
+token = "sha256~aUU7OCqVDPkmNTE30k6urvTjg-Pw5Y6OaLbP0xzpWr8"
 
 # Headers for OpenShift API
 headers = {
@@ -92,11 +92,14 @@ headers = {
 # scale_url = f"{openshift_server}/apis/apps/v1/namespaces/{namespace}/deployments/{deployment_name}/scale"
 
 deployments = {
-    "acmeair-mainservice": f"{openshift_server}/apis/apps/v1/namespaces/{namespace}/deployments/acmeair-mainservice/scale",
+    # "acmeair-mainservice": f"{openshift_server}/apis/apps/v1/namespaces/{namespace}/deployments/acmeair-mainservice/scale",
     "acmeair-authservice": f"{openshift_server}/apis/apps/v1/namespaces/{namespace}/deployments/acmeair-authservice/scale",
     "acmeair-bookingservice": f"{openshift_server}/apis/apps/v1/namespaces/{namespace}/deployments/acmeair-bookingservice/scale",
-    "acmeair-customerservice": f"{openshift_server}/apis/apps/v1/namespaces/{namespace}/deployments/acmeair-customerservice/scale",
+    # "acmeair-customerservice": f"{openshift_server}/apis/apps/v1/namespaces/{namespace}/deployments/acmeair-customerservice/scale",
     "acmeair-flightservice": f"{openshift_server}/apis/apps/v1/namespaces/{namespace}/deployments/acmeair-flightservice/scale"
+    # "acmeair-booking-db": f"{openshift_server}/apis/apps/v1/namespaces/{namespace}/deployments/acmeair-booking-db/scale",
+    # "acmeair-customer-db": f"{openshift_server}/apis/apps/v1/namespaces/{namespace}/deployments/acmeair-customer-db/scale",
+    # "acmeair-flight-db": f"{openshift_server}/apis/apps/v1/namespaces/{namespace}/deployments/acmeair-flight-db/scale"
 }
 
 ############################# Initiating data ##############################
@@ -224,29 +227,35 @@ def realtime_analyzing():
     Print real-time analysis for specific metrics.
     """
     # Check if there is data collected in the current iteration
-    if data_list:
-        # Get the latest data row
-        latest_data = data_list[-1]  # Access the last row of the collected data
+    if not data_list:
+        print("### Warning: No data available in data_list.")
+        return 0  # Return a default utility score if no data is available
 
-        # Print the required metrics if available in the latest data
-        net_request_time = latest_data.get('net.http.request.time', 'N/A')
-        net_request_time_worst = latest_data.get('net.http.request.time.worst', 'N/A')
-        cpu_quota_used = latest_data.get('cpu.quota.used.percent', 'N/A')
-
-        # print(f"Net HTTP Request Time: {net_request_time} ms, "
-        #       f"Net HTTP Request Time Worst: {net_request_time_worst} ms, "
-        #       f"CPU Quota Used: {cpu_quota_used} % \n")
-    if net_request_time is not None and net_request_time_worst is not None and cpu_quota_used is not None:
-        # Calculate individual utilities
-        u_avg_response = calculate_utility(net_request_time, THRESHOLDS["average_response_time"])
-        u_max_response = calculate_utility(net_request_time_worst, THRESHOLDS["max_response_time"])
-        u_cpu = calculate_utility(cpu_quota_used, THRESHOLDS["cpu_utilization"], is_cpu=True)
+    # Get the latest data row
+    latest_data = data_list[-1]  # Access the last row of the collected data
+    
+    # Safely retrieve metric values with default fallbacks
+    net_request_time = latest_data.get('net.http.request.time', None)
+    net_request_time_worst = latest_data.get('net.http.request.time.worst', None)
+    cpu_quota_used = latest_data.get('cpu.quota.used.percent', None)
+    
+    # Check if required metrics are available
+    if net_request_time is None or net_request_time_worst is None or cpu_quota_used is None:
+        print("Warning: Some required metrics are missing in the latest data.")
+        return 0  # Return a default utility score if critical metrics are missing
+    
+    # Calculate individual utilities
+    u_avg_response = calculate_utility(net_request_time, THRESHOLDS["average_response_time"])
+    u_max_response = calculate_utility(net_request_time_worst, THRESHOLDS["max_response_time"])
+    u_cpu = calculate_utility(cpu_quota_used, THRESHOLDS["cpu_utilization"], is_cpu=True)
+    
     # Calculate total utility
     total_utility = (
         WEIGHTS["average_response_time"] * u_avg_response +
         WEIGHTS["max_response_time"] * u_max_response +
         WEIGHTS["cpu_utilization"] * u_cpu
     )
+    
     # Determine overall status
     if total_utility == UTILITY_THRESHOLDS["Optimal"]:
         status = "Optimal"
@@ -254,10 +263,11 @@ def realtime_analyzing():
         status = "Acceptable"
     else:
         status = "Critical"
-    WEIGHTS["cpu_utilization"]
-    print(f" utility={total_utility:.1f}, Status={status}, avg={net_request_time:.0f}, max={net_request_time_worst:.0f}, cpu={cpu_quota_used:.0f}")
+    
+    print(f"Utility={total_utility:.1f}, Status={status}, avg={net_request_time:.0f}ms, max={net_request_time_worst:.0f}ms, cpu={cpu_quota_used:.0f}%.")
     latest_data['total_utility'] = total_utility  # <-- Store total_utility as a new metric
     return total_utility
+
 
 def planning(total_utility, current_pods): # return the pod planned.
     if total_utility <= 0.6:
@@ -267,7 +277,7 @@ def planning(total_utility, current_pods): # return the pod planned.
     else:
         print(f"[Planning] Total utility {total_utility:.2f} is sufficient. No action required.")
         return current_pods
-    current_pods = max(1, min(current_pods, 5))
+    current_pods = max(1, min(current_pods, 2))
     print(f"[Planning] Total utility is {total_utility:.2f}. Planning pod= {current_pods}.")
     return current_pods
 
@@ -326,6 +336,7 @@ def executing(deployment_name, new_replicas, max_retries=5):
 
 
 ######################  Continuous monitoring loop ##########################
+print(f"##0## Setting pod back to 1, wait {sampling}s...")
 current_pods = 1
 for deployment_name in deployments.keys():
     executing(deployment_name, current_pods)
