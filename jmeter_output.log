@@ -1,0 +1,35 @@
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using acmeair-jmeter/scripts/AcmeAir-microservices-mpJwt.jmx
+Starting standalone test @ 2024 Oct 11 01:34:28 EDT (1728624868632)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+usePureIDs property was set.
+summary +      1 in 00:00:01 =    0.8/s Avg:    82 Min:    82 Max:    82 Err:     0 (0.00%) Active: 1 Started: 1 Finished: 0
+summary +    458 in 00:00:30 =   15.1/s Avg:   457 Min:     9 Max: 21096 Err:   337 (73.58%) Active: 26 Started: 26 Finished: 0
+summary =    459 in 00:00:32 =   14.5/s Avg:   456 Min:     9 Max: 21096 Err:   337 (73.42%)
+summary +    766 in 00:00:30 =   25.4/s Avg:  1178 Min:     9 Max: 28087 Err:   569 (74.28%) Active: 50 Started: 50 Finished: 0
+summary =   1225 in 00:01:02 =   19.8/s Avg:   907 Min:     9 Max: 28087 Err:   906 (73.96%)
+summary +    706 in 00:00:31 =   23.1/s Avg:  1940 Min:     8 Max: 42096 Err:   505 (71.53%) Active: 50 Started: 50 Finished: 0
+summary =   1931 in 00:01:32 =   20.9/s Avg:  1285 Min:     8 Max: 42096 Err:  1411 (73.07%)
+summary +    664 in 00:00:29 =   23.0/s Avg:  2460 Min:     8 Max: 44754 Err:   366 (55.12%) Active: 50 Started: 50 Finished: 0
+summary =   2595 in 00:02:01 =   21.4/s Avg:  1585 Min:     8 Max: 44754 Err:  1777 (68.48%)
+summary +    816 in 00:00:30 =   26.9/s Avg:  1860 Min:     9 Max: 42080 Err:   515 (63.11%) Active: 50 Started: 50 Finished: 0
+summary =   3411 in 00:02:32 =   22.5/s Avg:  1651 Min:     8 Max: 44754 Err:  2292 (67.19%)
+summary +   1025 in 00:00:30 =   34.5/s Avg:  1639 Min:     8 Max: 36089 Err:   762 (74.34%) Active: 50 Started: 50 Finished: 0
+summary =   4436 in 00:03:01 =   24.5/s Avg:  1648 Min:     8 Max: 44754 Err:  3054 (68.85%)
+summary +   1064 in 00:00:30 =   35.5/s Avg:  1397 Min:     8 Max: 28112 Err:   797 (74.91%) Active: 50 Started: 50 Finished: 0
+summary =   5500 in 00:03:31 =   26.0/s Avg:  1600 Min:     8 Max: 44754 Err:  3851 (70.02%)
+summary +   1161 in 00:00:30 =   38.7/s Avg:  1219 Min:     9 Max: 22104 Err:   865 (74.50%) Active: 50 Started: 50 Finished: 0
+summary =   6661 in 00:04:01 =   27.6/s Avg:  1533 Min:     8 Max: 44754 Err:  4716 (70.80%)
+summary +    859 in 00:00:30 =   28.2/s Avg:  1595 Min:     8 Max: 24107 Err:   618 (71.94%) Active: 50 Started: 50 Finished: 0
+summary =   7520 in 00:04:32 =   27.7/s Avg:  1540 Min:     8 Max: 44754 Err:  5334 (70.93%)
+summary +    958 in 00:00:30 =   32.2/s Avg:  1789 Min:     8 Max: 32289 Err:   568 (59.29%) Active: 50 Started: 50 Finished: 0
+summary =   8478 in 00:05:01 =   28.1/s Avg:  1568 Min:     8 Max: 44754 Err:  5902 (69.62%)
+summary +     49 in 00:00:14 =    3.4/s Avg:  9781 Min:  3902 Max: 24092 Err:     9 (18.37%) Active: 0 Started: 50 Finished: 50
+summary =   8527 in 00:05:16 =   27.0/s Avg:  1616 Min:     8 Max: 44754 Err:  5911 (69.32%)
+Tidying up ...    @ 2024 Oct 11 01:39:44 EDT (1728625184628)
+... end of run

@@ -13,7 +13,7 @@ PORT=80
 DURATION_BASE=$((60*5)) 
 THREAD_BASE=50
 USER_BASE=500
-RAMP_BASE=20
+RAMP_BASE=60 # 20
 DELAY_BASE=30
 # Accept workload level as an argument
 WORKLOAD=${1:-medium}

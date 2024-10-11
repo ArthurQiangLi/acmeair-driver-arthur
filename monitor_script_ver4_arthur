@@ -334,7 +334,74 @@ def executing(deployment_name, new_replicas, max_retries=5):
 
     print(f"Max retries exceeded while trying to update replicas for {deployment_name}.")
 
+def adjust_resources(deployment_name, cpu_request, memory_request, cpu_limit, memory_limit, max_retries=5):
+    resource_url = f"{openshift_server}/apis/apps/v1/namespaces/{namespace}/deployments/{deployment_name}"
+    payload = {
+        "spec": {
+            "template": {
+                "spec": {
+                    "containers": [
+                        {
+                            "name": deployment_name,
+                            "resources": {
+                                "requests": {
+                                    "cpu": cpu_request,
+                                    "memory": memory_request
+                                },
+                                "limits": {
+                                    "cpu": cpu_limit,
+                                    "memory": memory_limit
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    }
 
+    # Update headers for a Kubernetes PATCH request
+    patch_headers = headers.copy()
+    patch_headers["Content-Type"] = "application/merge-patch+json"
+    
+    for attempt in range(max_retries):
+        try:
+            response = requests.patch(resource_url, headers=patch_headers, json=payload, verify=False)
+            if response.status_code == 200:
+                print(f"Successfully adjusted resources for {deployment_name} to CPU request: {cpu_request}, Memory request: {memory_request}")
+                return
+            else:
+                print(f"Attempt {attempt + 1}: Failed to adjust resources for {deployment_name}: {response.status_code} - {response.text}")
+        except requests.ConnectionError as e:
+            print(f"Attempt {attempt + 1}: Connection error for {deployment_name}: {str(e)}")
+
+        time.sleep(2)  # Wait before retrying
+
+    print(f"Max retries exceeded while trying to adjust resources for {deployment_name}.")
+
+
+def planning_resource_adjustment(total_utility):
+    if total_utility < 0.4:  # Threshold for critical condition
+        # Example values, adjust as needed based on actual usage patterns
+        new_cpu_request = "500m"  # 0.5 vCPU
+        new_memory_request = "512Mi"
+        new_cpu_limit = "1000m"  # 1 vCPU
+        new_memory_limit = "1024Mi"
+
+        # Apply resource changes to critical services
+        for deployment_name in deployments.keys():
+            adjust_resources(deployment_name, new_cpu_request, new_memory_request, new_cpu_limit, new_memory_limit)
+    elif total_utility > 0.8:  # Threshold for optimal condition
+        # Scale down the resources if utility is high and resources are under-utilized
+        new_cpu_request = "250m"  # 0.25 vCPU
+        new_memory_request = "256Mi"
+        new_cpu_limit = "500m"  # 0.5 vCPU
+        new_memory_limit = "512Mi"
+
+        for deployment_name in deployments.keys():
+            adjust_resources(deployment_name, new_cpu_request, new_memory_request, new_cpu_limit, new_memory_limit)
+    else:
+        print(f"[Planning] Resources are currently optimal for utility level {total_utility}. No adjustment required.")
 
 
 ######################  Continuous monitoring loop ##########################
@@ -376,9 +443,11 @@ while time.time() < collection_end_time:
     display_progress_bar()
     total_utilitity = realtime_analyzing()
     if(ENABLE_SELF_ADAPTATION): # if enabled a2's planning and executing, run these two functions.
-        current_pods = planning(total_utilitity, current_pods)
-        for deployment_name in deployments.keys():
-            executing(deployment_name, current_pods)
+        # current_pods = planning(total_utilitity, current_pods)
+        # for deployment_name in deployments.keys():
+        #     executing(deployment_name, current_pods)
+
+        planning_resource_adjustment(total_utilitity)
 
     time.sleep(sampling)  # wait for the next sampling interval
 
