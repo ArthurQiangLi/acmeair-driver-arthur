@@ -1,0 +1,13 @@
+WARNING: package sun.awt.X11 not in java.desktop
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using acmeair-jmeter/scripts/AcmeAir-microservices-mpJwt.jmx
+Starting standalone test @ 2024 Oct 11 18:15:30 EDT (1728684930060)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+usePureIDs property was set.
+summary +     26 in 00:00:30 =    0.9/s Avg:   645 Min:    16 Max:  3293 Err:    26 (100.00%) Active: 24 Started: 24 Finished: 0
+summary +  21659 in 00:00:30 =  721.4/s Avg:    33 Min:     0 Max: 36485 Err: 21659 (100.00%) Active: 50 Started: 50 Finished: 0
+summary =  21685 in 00:01:00 =  359.9/s Avg:    34 Min:     0 Max: 36485 Err: 21685 (100.00%)

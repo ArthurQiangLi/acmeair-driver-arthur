@@ -1,0 +1,290 @@
+2024-10-11 18:15:28,642 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2024-10-11 18:15:28,694 INFO o.a.j.JMeter: Loading user properties from: C:\Users\iamle\Documents\apache-jmeter-5.6.3\bin\user.properties
+2024-10-11 18:15:28,694 INFO o.a.j.JMeter: Loading system properties from: C:\Users\iamle\Documents\apache-jmeter-5.6.3\bin\system.properties
+2024-10-11 18:15:28,694 INFO o.a.j.JMeter: Setting System property: usePureIDs=true
+2024-10-11 18:15:28,694 INFO o.a.j.JMeter: Setting JMeter property: HOST=acmeair7.mycluster-ca-tor-2-bx2-4x-04e8c71ff333c8969bc4cbc5a77a70f6-0000.ca-tor.containers.appdomain.cloud
+2024-10-11 18:15:28,694 INFO o.a.j.JMeter: Setting JMeter property: PORT=80
+2024-10-11 18:15:28,696 INFO o.a.j.JMeter: Setting JMeter property: THREAD=50
+2024-10-11 18:15:28,696 INFO o.a.j.JMeter: Setting JMeter property: USER=500
+2024-10-11 18:15:28,696 INFO o.a.j.JMeter: Setting JMeter property: DURATION=300
+2024-10-11 18:15:28,696 INFO o.a.j.JMeter: Setting JMeter property: RAMP=60
+2024-10-11 18:15:28,696 INFO o.a.j.JMeter: Setting JMeter property: DELAY=30
+2024-10-11 18:15:28,717 INFO o.a.j.JMeter: Copyright (c) 1998-2024 The Apache Software Foundation
+2024-10-11 18:15:28,717 INFO o.a.j.JMeter: Version 5.6.3
+2024-10-11 18:15:28,717 INFO o.a.j.JMeter: java.version=21.0.3
+2024-10-11 18:15:28,717 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+2024-10-11 18:15:28,717 INFO o.a.j.JMeter: os.name=Windows 10
+2024-10-11 18:15:28,717 INFO o.a.j.JMeter: os.arch=amd64
+2024-10-11 18:15:28,717 INFO o.a.j.JMeter: os.version=10.0
+2024-10-11 18:15:28,717 INFO o.a.j.JMeter: file.encoding=UTF-8
+2024-10-11 18:15:28,717 INFO o.a.j.JMeter: java.awt.headless=true
+2024-10-11 18:15:28,717 INFO o.a.j.JMeter: Max memory     =1073741824
+2024-10-11 18:15:28,717 INFO o.a.j.JMeter: Available Processors =3
+2024-10-11 18:15:28,734 INFO o.a.j.JMeter: Default Locale=English (EN)
+2024-10-11 18:15:28,734 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2024-10-11 18:15:28,734 INFO o.a.j.JMeter: JMeterHome=C:\Users\iamle\Documents\apache-jmeter-5.6.3
+2024-10-11 18:15:28,734 INFO o.a.j.JMeter: user.dir  =C:\Users\iamle\Documents\local_acmeair_g7\acmeair-driver-arthur\acmeair-driver-arthur
+2024-10-11 18:15:28,734 INFO o.a.j.JMeter: PWD       =C:\Users\iamle\Documents\local_acmeair_g7\acmeair-driver-arthur\acmeair-driver-arthur
+2024-10-11 18:15:28,736 INFO o.a.j.JMeter: IP: 192.168.122.146 Name: DESKTOP-V3SCC0E FullName: host.docker.internal
+2024-10-11 18:15:28,780 INFO o.a.j.s.FileServer: Default base='C:\Users\iamle\Documents\local_acmeair_g7\acmeair-driver-arthur\acmeair-driver-arthur'
+2024-10-11 18:15:28,786 INFO o.a.j.s.FileServer: Set new base='C:\Users\iamle\Documents\local_acmeair_g7\acmeair-driver-arthur\acmeair-driver-arthur\acmeair-jmeter\scripts'
+2024-10-11 18:15:29,209 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2024-10-11 18:15:29,276 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2024-10-11 18:15:29,283 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2024-10-11 18:15:29,290 INFO o.a.j.s.SaveService: Loading file: acmeair-jmeter\scripts\AcmeAir-microservices-mpJwt.jmx
+2024-10-11 18:15:29,414 INFO o.a.j.p.h.c.CookieManager: Settings: Delete null: true Check: true Allow variable: true Save: true Prefix: COOKIE_
+2024-10-11 18:15:29,461 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2024-10-11 18:15:29,461 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2024-10-11 18:15:29,461 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2024-10-11 18:15:29,461 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2024-10-11 18:15:29,463 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2024-10-11 18:15:29,463 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2024-10-11 18:15:30,030 INFO o.a.j.JMeter: Creating summariser <summary>
+2024-10-11 18:15:30,190 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2024-10-11 18:15:30,192 INFO o.a.j.s.SampleEvent: List of sample_variables: [FLIGHTTOCOUNT, FLIGHTRETCOUNT, ONEWAY]
+2024-10-11 18:15:30,193 INFO o.a.j.s.SampleEvent: List of sample_variables: [FLIGHTTOCOUNT, FLIGHTRETCOUNT, ONEWAY]
+2024-10-11 18:15:30,212 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2024-10-11 18:15:30,212 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2024-10-11 18:15:30,637 INFO o.a.j.r.ClassFinder: Will scan jar C:\Users\iamle\Documents\apache-jmeter-5.6.3\lib\ext\acmeair-jmeter-2.0.0-SNAPSHOT.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.functions.Function], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2024-10-11 18:15:30,673 INFO o.a.j.r.ClassFinder: Will scan jar C:\Users\iamle\Documents\apache-jmeter-5.6.3\lib\ext\json-simple-1.1.1.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.functions.Function], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2024-10-11 18:15:31,072 INFO o.a.j.JMeter: Running test (1728684931072)
+2024-10-11 18:15:31,240 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Thread Group
+2024-10-11 18:15:31,245 INFO o.a.j.e.StandardJMeterEngine: Starting 50 threads for group Thread Group.
+2024-10-11 18:15:31,246 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2024-10-11 18:15:31,247 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=50 ramp-up=60 delayedStart=false
+2024-10-11 18:15:32,928 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2024-10-11 18:15:32,929 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2024-10-11 18:15:33,037 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-1
+2024-10-11 18:15:33,067 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@507022125
+2024-10-11 18:15:33,262 INFO o.a.j.p.h.s.HTTPHCAbstractImpl: Local host = DESKTOP-V3SCC0E
+2024-10-11 18:15:33,270 INFO o.a.j.p.h.s.HTTPHC4Impl: HTTP request retry count = 0
+2024-10-11 18:15:33,273 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2024-10-11 18:15:33,273 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to UTF-8
+2024-10-11 18:15:33,273 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2024-10-11 18:15:33,274 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2024-10-11 18:15:34,232 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-2
+2024-10-11 18:15:34,234 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@1617145799
+2024-10-11 18:15:35,361 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-3
+2024-10-11 18:15:35,366 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@576534822
+2024-10-11 18:15:36,554 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-4
+2024-10-11 18:15:36,557 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@421852341
+2024-10-11 18:15:36,683 INFO o.a.j.s.FileServer: Stored: Airports2.csv
+2024-10-11 18:15:36,687 INFO o.a.j.s.FileServer: Stored: Airports.csv
+2024-10-11 18:15:37,755 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-5
+2024-10-11 18:15:37,799 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@2143199295
+2024-10-11 18:15:38,945 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-6
+2024-10-11 18:15:38,946 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@1308307104
+2024-10-11 18:15:40,127 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-7
+2024-10-11 18:15:40,130 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@979339782
+2024-10-11 18:15:41,335 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-8
+2024-10-11 18:15:41,335 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@900708776
+2024-10-11 18:15:42,527 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-9
+2024-10-11 18:15:42,530 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@2116739370
+2024-10-11 18:15:43,703 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-10
+2024-10-11 18:15:43,711 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@1066885755
+2024-10-11 18:15:45,119 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-11
+2024-10-11 18:15:45,126 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@1644303053
+2024-10-11 18:15:46,062 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-12
+2024-10-11 18:15:46,065 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@648105894
+2024-10-11 18:15:47,438 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-13
+2024-10-11 18:15:47,443 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@1849017706
+2024-10-11 18:15:48,544 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-14
+2024-10-11 18:15:48,551 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@1370781846
+2024-10-11 18:15:49,765 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-15
+2024-10-11 18:15:49,769 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@37984089
+2024-10-11 18:15:50,931 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-16
+2024-10-11 18:15:50,944 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@554282512
+2024-10-11 18:15:52,098 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-17
+2024-10-11 18:15:52,099 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@115387148
+2024-10-11 18:15:53,295 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-18
+2024-10-11 18:15:53,300 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@597034677
+2024-10-11 18:15:54,512 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-19
+2024-10-11 18:15:54,513 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@45089914
+2024-10-11 18:15:55,490 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-20
+2024-10-11 18:15:55,491 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@385134674
+2024-10-11 18:15:56,659 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-21
+2024-10-11 18:15:56,667 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@906156107
+2024-10-11 18:15:57,836 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-22
+2024-10-11 18:15:57,842 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@834852922
+2024-10-11 18:15:58,967 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-23
+2024-10-11 18:15:58,968 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@1291399383
+2024-10-11 18:16:00,171 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-24
+2024-10-11 18:16:00,173 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@491153384
+2024-10-11 18:16:01,303 INFO o.a.j.r.Summariser: summary +     26 in 00:00:30 =    0.9/s Avg:   645 Min:    16 Max:  3293 Err:    26 (100.00%) Active: 24 Started: 24 Finished: 0
+2024-10-11 18:16:01,333 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-25
+2024-10-11 18:16:01,337 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@1317483977
+2024-10-11 18:16:02,483 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-26
+2024-10-11 18:16:02,491 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@1459367801
+2024-10-11 18:16:03,638 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-27
+2024-10-11 18:16:03,639 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@922087325
+2024-10-11 18:16:04,820 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-28
+2024-10-11 18:16:04,825 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@1881116148
+2024-10-11 18:16:05,857 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-29
+2024-10-11 18:16:05,860 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@725300563
+2024-10-11 18:16:07,096 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-30
+2024-10-11 18:16:07,097 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@1300996
+2024-10-11 18:16:08,298 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-31
+2024-10-11 18:16:08,300 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@1919291151
+2024-10-11 18:16:09,484 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-32
+2024-10-11 18:16:09,494 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@263303625
+2024-10-11 18:16:10,676 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-33
+2024-10-11 18:16:10,677 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@579652040
+2024-10-11 18:16:11,871 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-34
+2024-10-11 18:16:11,872 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@320833685
+2024-10-11 18:16:13,064 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-35
+2024-10-11 18:16:13,066 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@649930385
+2024-10-11 18:16:14,286 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-36
+2024-10-11 18:16:14,287 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@1041673586
+2024-10-11 18:16:15,619 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-37
+2024-10-11 18:16:15,620 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@1344898511
+2024-10-11 18:16:16,670 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-38
+2024-10-11 18:16:16,670 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@1469187961
+2024-10-11 18:16:17,981 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-39
+2024-10-11 18:16:17,986 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@1675435163
+2024-10-11 18:16:19,446 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-40
+2024-10-11 18:16:19,528 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@1812773391
+2024-10-11 18:16:20,289 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-41
+2024-10-11 18:16:20,320 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@1932947874
+2024-10-11 18:16:21,650 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-42
+2024-10-11 18:16:21,650 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@1037980948
+2024-10-11 18:16:22,881 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-43
+2024-10-11 18:16:22,882 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@2126076264
+2024-10-11 18:16:23,486 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:23,665 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:23,834 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:23,887 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-44
+2024-10-11 18:16:23,902 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@1591538947
+2024-10-11 18:16:23,949 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:24,150 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:24,282 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:24,466 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:24,739 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:25,113 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-45
+2024-10-11 18:16:25,114 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@1764533946
+2024-10-11 18:16:26,259 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-46
+2024-10-11 18:16:26,266 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@1170136946
+2024-10-11 18:16:27,510 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-47
+2024-10-11 18:16:27,514 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@1868752316
+2024-10-11 18:16:28,682 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-48
+2024-10-11 18:16:28,685 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@1744425652
+2024-10-11 18:16:29,892 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-49
+2024-10-11 18:16:29,893 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@1918458961
+2024-10-11 18:16:31,072 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-50
+2024-10-11 18:16:31,077 INFO o.a.j.s.FileServer: Stored: hosts.csv Alias: hosts.csv@104474907
+2024-10-11 18:16:31,326 INFO o.a.j.r.Summariser: summary +  21659 in 00:00:30 =  721.4/s Avg:    33 Min:     0 Max: 36485 Err: 21659 (100.00%) Active: 50 Started: 50 Finished: 0
+2024-10-11 18:16:31,328 INFO o.a.j.r.Summariser: summary =  21685 in 00:01:00 =  359.9/s Avg:    34 Min:     0 Max: 36485 Err: 21685 (100.00%)
+2024-10-11 18:16:36,507 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:36,557 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:36,570 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:36,588 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:36,691 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:37,146 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:37,318 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:37,641 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:37,807 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:37,903 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:38,142 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:38,147 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:38,252 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:38,499 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:38,502 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:38,720 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:38,820 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:38,821 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:39,109 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:39,154 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:39,304 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:39,377 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:39,423 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:39,552 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:39,632 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:39,778 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:39,850 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:39,958 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:40,114 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:40,147 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:40,273 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:40,335 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:40,399 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:40,449 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:40,484 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:40,501 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:40,670 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:40,752 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:40,802 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:40,935 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:40,937 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:40,945 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:40,963 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:41,040 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:41,181 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:41,183 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:41,188 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:41,316 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:41,324 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:41,355 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:41,422 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:41,572 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:41,770 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:41,799 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:41,806 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:41,806 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:41,820 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:42,352 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:42,389 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:42,408 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:42,552 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:42,624 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:42,635 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:42,651 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:42,689 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:42,909 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:42,989 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:43,013 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:43,099 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:43,131 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:43,137 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:43,165 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:43,222 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:43,222 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:43,367 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:43,657 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:43,664 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:43,667 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:43,700 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:43,720 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:43,731 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:43,808 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:43,843 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:43,856 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:43,904 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:44,077 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:44,265 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:44,284 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:44,407 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:44,427 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:44,466 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:44,482 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:44,504 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:44,594 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:44,755 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:44,920 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:44,948 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:45,021 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:45,036 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:45,043 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:45,049 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:45,062 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:45,072 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:45,257 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:45,321 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:45,335 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:45,379 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:45,432 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:45,449 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:45,624 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:45,636 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:45,735 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:45,737 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:45,845 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
+2024-10-11 18:16:45,873 WARN o.a.j.p.h.s.HTTPSamplerBase: Existing CookieManager HTTP Cookie Manager superseded by HTTP Cookie Manager
