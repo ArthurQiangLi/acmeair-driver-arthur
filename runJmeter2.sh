@@ -56,13 +56,6 @@ echo "DURATION=${DURATION}"
 echo "RAMP=${RAMP}"
 echo "DELAY=${DELAY}"
 echo "#### Running JMeter..."
-# exit 1
-
-# Check if host is reachable
-# if ! curl --output /dev/null --silent --head --fail "http://${HOST}"; then
-#     echo "Error: Cannot reach host ${HOST}"
-#     exit 1
-# fi
 
 # Load initial data for the services
 curl http://${HOST}/booking/loader/load || { echo "Error loading booking data"; exit 1; }

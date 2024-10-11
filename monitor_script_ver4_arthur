@@ -6,6 +6,8 @@ from datetime import datetime, timedelta
 import pandas as pd
 import matplotlib.pyplot as plt
 from sdcclient import SdMonitorClient, IbmAuthHelper
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning) # to suppress the InsecureRequestWarning Warning from http requests.
 
 # Configuration values
 GUID = '3fed93bc-00f4-4651-8ce2-e73ba4b9a918'
@@ -76,7 +78,7 @@ output_dir = "./monitor_collections/" # Specify the output directory for saving 
 # OpenShift parameters
 openshift_server = "https://c104-e.ca-tor.containers.cloud.ibm.com:30227"
 namespace = "group-7"
-deployment_name = "acmeair-mainservice"
+# deployment_name = "acmeair-mainservice"
 token = "sha256~gsDM7K2dv17_jLvCSM9UMAZ9G4eccInr4OJR53gQZrY"
 
 # Headers for OpenShift API
@@ -87,7 +89,15 @@ headers = {
 }
 
 # Define the OpenShift API URL for scaling
-scale_url = f"{openshift_server}/apis/apps/v1/namespaces/{namespace}/deployments/{deployment_name}/scale"
+# scale_url = f"{openshift_server}/apis/apps/v1/namespaces/{namespace}/deployments/{deployment_name}/scale"
+
+deployments = {
+    "acmeair-mainservice": f"{openshift_server}/apis/apps/v1/namespaces/{namespace}/deployments/acmeair-mainservice/scale",
+    "acmeair-authservice": f"{openshift_server}/apis/apps/v1/namespaces/{namespace}/deployments/acmeair-authservice/scale",
+    "acmeair-bookingservice": f"{openshift_server}/apis/apps/v1/namespaces/{namespace}/deployments/acmeair-bookingservice/scale",
+    "acmeair-customerservice": f"{openshift_server}/apis/apps/v1/namespaces/{namespace}/deployments/acmeair-customerservice/scale",
+    "acmeair-flightservice": f"{openshift_server}/apis/apps/v1/namespaces/{namespace}/deployments/acmeair-flightservice/scale"
+}
 
 ############################# Initiating data ##############################
 # Define the time window for fetching data
@@ -261,33 +271,35 @@ def planning(total_utility, current_pods): # return the pod planned.
     print(f"[Planning] Total utility is {total_utility:.2f}. Planning pod= {current_pods}.")
     return current_pods
 
-def get_current_replicas(max_retries=5): # try N times to get access to OpenShift
+def get_current_replicas(deployment_name, max_retries=5):  # Try N times to get access to OpenShift
+    scale_url = deployments[deployment_name]
     for attempt in range(max_retries):
         try:
             get_response = requests.get(scale_url, headers=headers, verify=False)
             if get_response.status_code == 200:
                 return get_response.json()["spec"]["replicas"]
             else:
-                print(f"Attempt {attempt + 1}: Failed to get replicas, error = {get_response.status_code}.")
+                print(f"Attempt {attempt + 1}: Failed to get replicas for {deployment_name}, error = {get_response.status_code}.")
         except requests.ConnectionError as e:
-            print(f"Attempt {attempt + 1}: Connection error: {str(e)}.")
+            print(f"Attempt {attempt + 1}: Connection error for {deployment_name}: {str(e)}.")
         
         time.sleep(2)  # Wait before retrying
 
-    print("Max retries exceeded while trying to get replicas.")
+    print(f"Max retries exceeded while trying to get replicas for {deployment_name}.")
     return -1  # Indicate failure
 
 
-def executing(new_replicas, max_retries=5):
-    # Step 1: Read the current number of replicas from the OpenShift deployment
-    current_replicas = get_current_replicas()
+
+def executing(deployment_name, new_replicas, max_retries=5):
+    # Step 1: Read the current number of replicas for the specified deployment
+    current_replicas = get_current_replicas(deployment_name)
     if current_replicas == -1:
         return       
-    if(current_replicas == new_replicas):
-        print(f"Current replicas: {current_replicas}, no need to change.")
+    if current_replicas == new_replicas:
+        print(f"Current replicas for {deployment_name}: {current_replicas}, no need to change.")
         return
     
-    print(f"Executing adaptation plan: Scaling pods from {current_replicas} to {new_replicas}...")
+    print(f"Executing adaptation plan: Scaling {deployment_name} pods from {current_replicas} to {new_replicas}...")
     scale_payload = {
         "apiVersion": "autoscaling/v1",
         "kind": "Scale",
@@ -296,24 +308,27 @@ def executing(new_replicas, max_retries=5):
     }
 
     # Send the PUT request to update the number of replicas
+    scale_url = deployments[deployment_name]
     for attempt in range(max_retries):
         try:
             response = requests.put(scale_url, headers=headers, json=scale_payload, verify=False)
             if response.status_code == 200:
-                print(f"Successfully scaled to {new_replicas} replicas.")
+                print(f"Successfully scaled {deployment_name} to {new_replicas} replicas.")
                 return
             else:
-                print(f"Attempt {attempt + 1}: Failed to update replicas: {response.status_code} - {response.text}.")
+                print(f"Attempt {attempt + 1}: Failed to update replicas for {deployment_name}: {response.status_code} - {response.text}.")
         except requests.ConnectionError as e:
-            print(f"Attempt {attempt + 1}: Connection error: {str(e)}.")
+            print(f"Attempt {attempt + 1}: Connection error for {deployment_name}: {str(e)}.")
 
         time.sleep(2)  # Wait before retrying
 
-    print("Max retries exceeded while trying to update replicas.")
+    print(f"Max retries exceeded while trying to update replicas for {deployment_name}.")
+
 
 ######################  Continuous monitoring loop ##########################
 current_pods = 1
-executing(current_pods)
+for deployment_name in deployments.keys():
+    executing(deployment_name, current_pods)
 time.sleep(sampling)  # make sure pod is set to 1 every time.
 
 print("##1## Starting data collection...")
@@ -349,7 +364,8 @@ while time.time() < collection_end_time:
     total_utilitity = realtime_analyzing()
     if(ENABLE_SELF_ADAPTATION): # if enabled a2's planning and executing, run these two functions.
         current_pods = planning(total_utilitity, current_pods)
-        executing(current_pods)
+        for deployment_name in deployments.keys():
+            executing(deployment_name, current_pods)
 
     time.sleep(sampling)  # wait for the next sampling interval
 
